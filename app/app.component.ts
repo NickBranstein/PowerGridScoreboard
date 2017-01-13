@@ -11,7 +11,7 @@ export class AppComponent {
         if (this.counter > 0) {
             return this.counter + " taps left";
         } else {
-            return "Hoorraaay! \nYou are ready to start building!";
+            return "Jason was here! \nYou are ready to start building!";
         }
     }
     
