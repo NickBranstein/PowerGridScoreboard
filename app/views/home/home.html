@@ -1,4 +1,3 @@
-<page-router-outlet></page-router-outlet>
 <StackLayout>
     <Label text="Power Grid Scoreboard"></Label>
     <StackLayout orientation="horizontal">
@@ -8,8 +7,5 @@
         <TextField hint="Player 4" [(ngModel)]="playerFour"></TextField>
         <TextField hint="Player 5" [(ngModel)]="playerFive"></TextField>
     </StackLayout>
-    <StackLayout>
-        <Label [text]="message"></Label>
-    </StackLayout>
-    <Button text="Start" (tap)="onTap()" class="btn btn-primary"></Button>
+    <Button text="Play!" (tap)="onTap()" class="btn btn-primary"></Button>
 </StackLayout>

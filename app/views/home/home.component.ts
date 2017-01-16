@@ -14,15 +14,14 @@ export class HomeComponent {
     public playerFour: string;
     public playerFive: string;
     public message: string;
+    public players: string[];
 
-
-    /**
-     *
-     */
-    constructor(private router: Router) {       }
+    public constructor(private router: Router) {
+    
+    }
     
     public onTap() {
-        console.log('player one: ' + this.playerOne);
-        this.router.navigate(["/scoreboard"]);
+        let players: string[] = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
+        this.router.navigate(["scoreboard", this.players]);
     }
 }
