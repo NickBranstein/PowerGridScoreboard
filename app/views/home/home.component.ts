@@ -7,13 +7,11 @@ import { Router } from "@angular/router";
 })
     
 export class HomeComponent {
-    public counter: number = 16;
     public playerOne: string;
     public playerTwo: string;
     public playerThree: string;
     public playerFour: string;
     public playerFive: string;
-    public message: string;
     public players: string[];
 
     public constructor(private router: Router) {
