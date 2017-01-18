@@ -1,11 +1,30 @@
 <StackLayout>
-    <Label text="Power Grid Scoreboard"></Label>
-    <StackLayout orientation="horizontal">
-        <TextField hint="Player 1" [(ngModel)]="playerOne"></TextField>
-        <TextField hint="Player 2" [(ngModel)]="playerTwo"></TextField>
-        <TextField hint="Player 3" [(ngModel)]="playerThree"></TextField>
-        <TextField hint="Player 4" [(ngModel)]="playerFour"></TextField>
-        <TextField hint="Player 5" [(ngModel)]="playerFive"></TextField>
-    </StackLayout>
-    <Button text="Play!" (tap)="onTap()" class="btn btn-primary"></Button>
+    <ScrollView>
+        <StackLayout>
+            <Label text="Power Grid Scoreboard"></Label>
+            <StackLayout class="form">
+                <StackLayout class="input-field">
+                    <Label class="label" text="Player 1 Name"></Label>
+                    <TextField class="input" hint="Player 1" [(ngModel)]="playerOne"></TextField>
+                </StackLayout>
+                <StackLayout class="input-field">
+                    <Label class="label" text="Player 2 Name"></Label>
+                    <TextField class="input" hint="Player 2" [(ngModel)]="playerTwo"></TextField>
+                </StackLayout>
+                <StackLayout class="input-field">
+                    <Label class="label" text="Player 3 Name"></Label>
+                    <TextField class="input" hint="Player 3" [(ngModel)]="playerThree"></TextField>
+                </StackLayout>
+                <StackLayout class="input-field">
+                    <Label class="label" text="Player 4 Name"></Label>
+                    <TextField class="input" hint="Player 4" [(ngModel)]="playerFour"></TextField>
+                </StackLayout>
+                <StackLayout class="input-field">
+                    <Label class="label" text="Player 5 Name"></Label>
+                    <TextField class="input" hint="Player 5" [(ngModel)]="playerFive"></TextField>
+                </StackLayout>
+            </StackLayout>
+            <Button text="Play!" (tap)="onTap()" class="btn btn-primary"></Button>
+        </StackLayout>
+    </ScrollView>
 </StackLayout>
