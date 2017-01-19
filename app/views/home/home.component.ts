@@ -5,7 +5,8 @@ import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 
 @Component({
     selector: "home",
-    templateUrl: "./views/home/home.html",
+    templateUrl: "views/home/home.html",
+    styleUrls: ["views/home/home.css"]
 })
     
 export class HomeComponent {
@@ -16,6 +17,10 @@ export class HomeComponent {
     public playerFive: string;
     public players: string[];
     public landscape: boolean;
+    public hasPlayerTwo: boolean;
+    public hasPlayerThree: boolean;
+    public hasPlayerFour: boolean;
+    public hasPlayerFive: boolean;
 
     public constructor(private router: Router, private fonticon: TNSFontIconService) {
         if (Platform.screen.mainScreen.widthPixels > 1024) {
@@ -25,6 +30,22 @@ export class HomeComponent {
         }
     }
     
+    public onPlayerTwoTap() {
+        this.hasPlayerTwo = !this.hasPlayerTwo;
+    }
+
+    public onPlayerThreeTap() {
+        this.hasPlayerThree = !this.hasPlayerThree;
+    }
+
+    public onPlayerFourTap() {
+        this.hasPlayerFour = !this.hasPlayerFour;
+    }
+
+    public onPlayerFiveTap() {
+        this.hasPlayerFive = !this.hasPlayerFive;
+    }
+
     public onTap() {
         let players: string[] = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
         this.router.navigate(["scoreboard", this.players]);

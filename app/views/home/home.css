@@ -1,3 +1,8 @@
-Label {
-    border-bottom: 20px;
+.disabled {
+    opacity: .5;
+}
+
+.label-active {
+    font-size: 12px;
+    color: #000000;
 }
