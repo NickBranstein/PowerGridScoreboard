@@ -3,6 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptFormsModule } from "nativescript-angular/forms"
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { routes, navigatableComponents } from "./app.routing";
+import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./views/home/home.component";
@@ -22,7 +23,10 @@ import { ScoreboardComponent } from "./views/scoreboard/scoreboard.component";
         NativeScriptModule,
         NativeScriptFormsModule,
         NativeScriptRouterModule,
-        NativeScriptRouterModule.forRoot(routes)
+        NativeScriptRouterModule.forRoot(routes),
+        TNSFontIconModule.forRoot({
+            'fa': 'font-awesome.css'
+        })
     ],
     schemas: [NO_ERRORS_SCHEMA]
 })

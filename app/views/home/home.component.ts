@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import * as Platform from "platform";
+import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 
 @Component({
     selector: "home",
@@ -13,9 +15,14 @@ export class HomeComponent {
     public playerFour: string;
     public playerFive: string;
     public players: string[];
+    public landscape: boolean;
 
-    public constructor(private router: Router) {
-    
+    public constructor(private router: Router, private fonticon: TNSFontIconService) {
+        if (Platform.screen.mainScreen.widthPixels > 1024) {
+            this.landscape = true;
+        } else {
+            this.landscape = false;
+        }
     }
     
     public onTap() {

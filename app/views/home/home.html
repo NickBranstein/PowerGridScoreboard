@@ -2,29 +2,46 @@
     <ScrollView>
         <StackLayout>
             <Label text="Power Grid Scoreboard"></Label>
-            <StackLayout class="form">
+            <StackLayout class="form" [orientation]="landscape ? 'horizontal' : 'vertical'">
                 <StackLayout class="input-field">
-                    <Label class="label" text="Player 1 Name"></Label>
-                    <TextField class="input" hint="Player 1" [(ngModel)]="playerOne"></TextField>
+                    <StackLayout orientation="horizontal">
+                        <Label class='fa' [text]="'fa-user' | fonticon"></Label>
+                    <Label class="label" text="Player 1"></Label>
+                    </StackLayout>
+                    <TextField class="input" hint="enter name" [(ngModel)]="playerOne"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
-                    <Label class="label" text="Player 2 Name"></Label>
-                    <TextField class="input" hint="Player 2" [(ngModel)]="playerTwo"></TextField>
+                    <StackLayout orientation="horizontal">
+                        <Label class='fa' [text]="'fa-user' | fonticon"></Label>
+                    <Label class="label" text="Player 2"></Label>
+                    </StackLayout>
+                    <TextField class="input" hint="enter name" [(ngModel)]="playerTwo"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
-                    <Label class="label" text="Player 3 Name"></Label>
-                    <TextField class="input" hint="Player 3" [(ngModel)]="playerThree"></TextField>
+                    <StackLayout orientation="horizontal">
+                        <Label class='fa' [text]="'fa-user' | fonticon"></Label>
+                    <Label class="label" text="Player 3"></Label>
+                    </StackLayout>
+                    <TextField class="input" hint="enter name" [(ngModel)]="playerThree"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
-                    <Label class="label" text="Player 4 Name"></Label>
-                    <TextField class="input" hint="Player 4" [(ngModel)]="playerFour"></TextField>
+                    <StackLayout orientation="horizontal">
+                        <Label class='fa' [text]="'fa-user' | fonticon"></Label>
+                    <Label class="label" text="Player 4"></Label>
+                    </StackLayout>
+                    <TextField class="input" hint="enter name" [(ngModel)]="playerFour"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
-                    <Label class="label" text="Player 5 Name"></Label>
-                    <TextField class="input" hint="Player 5" [(ngModel)]="playerFive"></TextField>
+                    <StackLayout orientation="horizontal">
+                        <Label class='fa' [text]="'fa-user' | fonticon"></Label>
+                    <Label class="label" text="Player 5"></Label>
+                    </StackLayout>
+                    <TextField class="input" hint="enter name" [(ngModel)]="playerFive"></TextField>
                 </StackLayout>
             </StackLayout>
-            <Button text="Play!" (tap)="onTap()" class="btn btn-primary"></Button>
+            <StackLayout class="m-x-auto">
+                <Button text="Play!" (tap)="onTap()" class="btn btn-primary btn-rounded-lg"></Button>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </StackLayout>
