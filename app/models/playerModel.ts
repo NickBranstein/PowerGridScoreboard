@@ -1,3 +1,0 @@
-class Player {
-    Name: string;
-}

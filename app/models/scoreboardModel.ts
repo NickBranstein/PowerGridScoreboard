@@ -1,3 +1,5 @@
+import { Player } from "./player";
+
 export class Scoreboard {
     PlayerOne: Player;
     PlayerTwo: Player;

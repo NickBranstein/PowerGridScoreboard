@@ -1,26 +1,26 @@
 <StackLayout class="border" height="150">
-    <StackLayout orientation="horizontal">
+    <StackLayout class="p-x-5 pull-right" orientation="horizontal">
+        <Label class="name p-r-5" [text]="player.Name"></Label>
         <Label class='fa' [text]="'fa-user' | fonticon"></Label>
-        <Label class="name" text="Player 1"></Label>
     </StackLayout>
-    <StackLayout orientation="horizontal">
-        <Label class='fa' [text]="'fa-money' | fonticon"></Label>
-        <Label class="money" text="Money: $5,000"></Label>
+    <StackLayout class="p-l-5" orientation="horizontal">
+        <Label class='money fa' width="25" [text]="'fa-money' | fonticon"></Label>
+        <Label class="p-l-5" [text]="'Money: $' + player.Money"></Label>
     </StackLayout>
-    <StackLayout orientation="horizontal">
-        
-        <Label class="resources" text="Coal: 15"></Label>
+    <StackLayout class="p-l-5" orientation="horizontal">        
+        <Label class='coal fa' width="25" [text]="'fa-train' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="'Coal: ' + player.Coal"></Label>
     </StackLayout>
-    <StackLayout orientation="horizontal">
-        
-        <Label class="resources" text="Oil: 5"></Label>
+    <StackLayout class="p-l-5" orientation="horizontal">
+        <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="'Oil: ' + player.Oil"></Label>
     </StackLayout>
-    <StackLayout orientation="horizontal">
-        
-        <Label class="resources" text="Garbage: 2"></Label>
+    <StackLayout class="p-l-5" orientation="horizontal">
+        <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="'Garbage: ' + player.Garbage"></Label>
     </StackLayout>
-    <StackLayout orientation="horizontal">
-        
-        <Label class="resources" text="Uranium: 1"></Label>
+    <StackLayout class="p-l-5" orientation="horizontal">
+        <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="'Uranium: ' + player.Uranium"></Label>
     </StackLayout>
 </StackLayout>

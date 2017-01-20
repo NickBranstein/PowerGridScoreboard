@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import * as Platform from "platform";
-import { TNSFontIconService } from 'nativescript-ngx-fonticon';
+import { TNSFontIconService } from "nativescript-ngx-fonticon";
+import { Player } from "../../models/player";
 
 @Component({
     selector: "playerCard",
@@ -10,7 +9,9 @@ import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 })
 
 export class PlayerCardComponent {
+    private player: Player;
+
     public constructor(private fonticon: TNSFontIconService) {
-    
+        this.player = new Player("Nick", 1000);
     }
 }

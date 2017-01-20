@@ -1,5 +1,5 @@
 .name {
-    color: blue;
+    
     font-size: 18px;
 }
 
@@ -8,10 +8,26 @@
 }
 
 .resources {
-    color: red;
+    
 }
 
 .border {
     border-color: #000000;
     border-width: 2px;
+}
+
+.coal {
+    color: brown;
+}
+
+.oil {
+    color: darkgrey;
+}
+
+.garbage {
+    color: gold;
+}
+
+.uranium {
+    color: red;
 }
