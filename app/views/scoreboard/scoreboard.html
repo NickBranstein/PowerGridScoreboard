@@ -1,11 +1,29 @@
-    <GridLayout columns="*, *, *" rows="*, *, *" horizontal-alignment="center" >
-        <playerCard col="0" row="0"></playerCard>
-        <label col="1" row="0"></label>
-        <playerCard col="2" row="0"></playerCard>
-        <label col="0" row="1"></label> 
-        <playerCard col="1" row="1"></playerCard>
-        <label col="2" row="1"></label>
-        <playerCard col="0" row="2"></playerCard>
-        <label col="1" row="2"></label>
-        <playerCard col="2" row="2"></playerCard>
-    </GridLayout>
+<GridLayout columns="*, *, *" rows="*, *, *" horizontal-alignment="center" >
+    <StackLayout col="0" row="0">
+        <playerCard [(player)]="playerOne" ></playerCard>
+    </StackLayout>
+
+    <label col="1" row="0" text=""></label>
+
+    <StackLayout col="2" row="0">
+        <playerCard [(player)]="playerTwo" ></playerCard>
+    </StackLayout>
+
+    <label col="0" row="1" text=""></label> 
+
+    <StackLayout col="1" row="1">
+        <playerCard [(player)]="playerThree" ></playerCard>
+    </StackLayout>
+
+    <label col="2" row="1" text=""></label>
+
+    <StackLayout col="0" row="2">
+        <playerCard [(player)]="playerThree" ></playerCard>
+    </StackLayout>
+
+    <label col="1" row="2" text=""></label>
+
+    <StackLayout col="2" row="2">
+        <playerCard [(player)]="playerThree" ></playerCard>
+    </StackLayout>
+</GridLayout>
