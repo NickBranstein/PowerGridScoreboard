@@ -15,7 +15,9 @@ import { ScoreboardComponent } from "./views/scoreboard/scoreboard.component";
         ...navigatableComponents
     ],
     bootstrap: [
-        AppComponent,
+        AppComponent
+    ],
+    entryComponents: [
         HomeComponent,
         ScoreboardComponent
     ],
