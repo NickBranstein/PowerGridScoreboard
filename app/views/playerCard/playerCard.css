@@ -1,0 +1,17 @@
+.name {
+    color: blue;
+    font-size: 18px;
+}
+
+.money {
+    color: green;
+}
+
+.resources {
+    color: red;
+}
+
+.border {
+    border-color: #000000;
+    border-width: 2px;
+}

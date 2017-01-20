@@ -50,4 +50,8 @@ export class HomeComponent {
         let players: string[] = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
         this.router.navigate(["scoreboard", this.players]);
     }
+
+    public onPlayerCardTap() {
+        this.router.navigate(["playerCard"]);
+    }
 }

@@ -8,6 +8,7 @@ import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./views/home/home.component";
 import { ScoreboardComponent } from "./views/scoreboard/scoreboard.component";
+import { PlayerCardComponent } from "./views/playerCard/playerCard.component";
 
 @NgModule({
     declarations: [
@@ -15,9 +16,12 @@ import { ScoreboardComponent } from "./views/scoreboard/scoreboard.component";
         ...navigatableComponents
     ],
     bootstrap: [
-        AppComponent,
+        AppComponent
+    ],
+    entryComponents: [
         HomeComponent,
-        ScoreboardComponent
+        ScoreboardComponent,
+        PlayerCardComponent
     ],
     imports: [
         NativeScriptModule,
