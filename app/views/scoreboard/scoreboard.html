@@ -1,11 +1,28 @@
     <GridLayout columns="*, *, *" rows="*, *, *" horizontal-alignment="center" >
-        <playerCard col="0" row="0"></playerCard>
+        <StackLayout col="0" row="0">
+            <playerCard [(player)]="playerOne" ></playerCard>
+        </StackLayout>
+        
         <button col="1" row="0" text="blank"></button>
-        <playerCard col="2" row="0"></playerCard>
+        <StackLayout col="2" row="0">
+            <playerCard [(player)]="playerTwo" ></playerCard>
+        </StackLayout>
+        
         <button col="0" row="1" text="blank"></button> 
-        <playerCard col="1" row="1"></playerCard>
+        
+        <StackLayout col="1" row="1">
+            <playerCard [(player)]="playerThree" ></playerCard>
+        </StackLayout>
+        
         <button col="2" row="1" text="blank"></button>
-        <playerCard col="0" row="2"></playerCard>
+
+        <StackLayout col="0" row="2">
+            <playerCard [(player)]="playerThree" ></playerCard>
+        </StackLayout>
+
         <button col="1" row="2" text="blank"></button>
-        <playerCard col="2" row="2"></playerCard>
+
+        <StackLayout col="2" row="2">
+            <playerCard [(player)]="playerThree" ></playerCard>
+        </StackLayout>
     </GridLayout>
