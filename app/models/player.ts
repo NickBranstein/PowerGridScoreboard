@@ -1,10 +1,5 @@
 export class Player {
-    Coal: number;
-    Oil: number;
-    Garbage: number;
-    Uranium: number;
-
-    constructor(public Name: string, public Money: number) {
-        this.Coal = this.Oil = this.Garbage = this.Uranium = 0;
+    constructor(public Name: string, public Money = 0, public Coal = 0,
+        public Oil = 0, public Garbage = 0, public Uranium = 0, public Houses = 0) {
     }
 }
