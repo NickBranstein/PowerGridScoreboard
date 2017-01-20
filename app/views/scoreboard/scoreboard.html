@@ -1,31 +1,11 @@
-<StackLayout>
-    <StackLayout orientation="horizontal">
-        <StackLayout>
-            <Label (text)="players[0]"></Label>
-            <Label text="Money: $123"></Label>
-            <Label text="Resources: 456"></Label>
-        </StackLayout>
-        <StackLayout>
-            <Label (text)="playerTwoName"></Label>
-            <Label text="Money: $456"></Label>
-            <Label text="Resources: 789"></Label>
-        </StackLayout>
-        <StackLayout>
-            <Label (text)="playerThreeName"></Label>
-            <Label text="Money: $987"></Label>
-            <Label text="Resources: 320"></Label>
-        </StackLayout>
-    </StackLayout>
-    <StackLayout orientation="horizontal">
-        <StackLayout>
-            <Label (text)="playerFourName"></Label>
-            <Label text="Money: $654"></Label>
-            <Label text="Resources: 321"></Label>
-        </StackLayout>
-        <StackLayout>
-            <Label (text)="playerFiveName"></Label>
-            <Label text="Money: $789"></Label>
-            <Label text="Resources: 875"></Label>
-        </StackLayout>
-    </StackLayout>
-</StackLayout>
+    <GridLayout columns="*, *, *" rows="*, *, *" horizontal-alignment="center" >
+        <playerCard col="0" row="0"></playerCard>
+        <button col="1" row="0" text="blank"></button>
+        <playerCard col="2" row="0"></playerCard>
+        <button col="0" row="1" text="blank"></button> 
+        <playerCard col="1" row="1"></playerCard>
+        <button col="2" row="1" text="blank"></button>
+        <playerCard col="0" row="2"></playerCard>
+        <button col="1" row="2" text="blank"></button>
+        <playerCard col="2" row="2"></playerCard>
+    </GridLayout>
