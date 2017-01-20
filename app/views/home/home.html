@@ -12,10 +12,10 @@
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
-                        <Label [class]="hasPlayerTwo ? 'fa' : 'fa disabled'" [text]="'fa-user' | fonticon" (tap)="onPlayerTwoTap()"></Label>
-                        <Label [class]="hasPlayerTwo ? 'label-active' : 'label'" text="Player 2"></Label>
+                        <Label class="fa" [text]="'fa-user' | fonticon" (tap)="onPlayerTwoTap()"></Label>
+                        <Label class="label-active" text="Player 2"></Label>
                     </StackLayout>
-                    <TextField class="input" [visibility]="hasPlayerTwo ? 'visible' : 'collapsed'" hint="enter name" [(ngModel)]="playerTwo"></TextField>
+                    <TextField class="input" visibility="visible" hint="enter name" [(ngModel)]="playerTwo"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
