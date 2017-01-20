@@ -1,42 +1,28 @@
-<StackLayout class="border" orientation="horizontal">
-    <StackLayout width="70%" class="pull-left">
-        <StackLayout class="p-x-5 pull-right" orientation="horizontal">
-            <Label text="  "></Label>
-            <!--This is intentionally blank to take up space-->
-        </StackLayout>
-        <StackLayout class="p-l-5" orientation="horizontal">
-            <Label class='money fa' width="25" [text]="'fa-money' | fonticon"></Label>
-            <Label class="p-l-5" [text]="'Money: $' + player.Money"></Label>
-        </StackLayout>
-        <StackLayout class="p-l-5" orientation="horizontal">        
-            <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
-            <Label class="resources p-l-5" [text]="'Coal: ' + player.Coal"></Label>
-        </StackLayout>
-        <StackLayout class="p-l-5" orientation="horizontal">
-            <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
-            <Label class="resources p-l-5" [text]="'Oil: ' + player.Oil"></Label>
-        </StackLayout>
-        <StackLayout class="p-l-5" orientation="horizontal">
-            <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
-            <Label class="resources p-l-5" [text]="'Garbage: ' + player.Garbage"></Label>
-        </StackLayout>
-        <StackLayout class="p-l-5" orientation="horizontal">
-            <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
-            <Label class="resources p-l-5" [text]="'Uranium: ' + player.Uranium"></Label>
-        </StackLayout>
-        <StackLayout class="p-l-5" orientation="horizontal">
-            <Label class='fa' width="25" [text]="'fa-home' | fonticon"></Label>
-            <Label class="resources p-l-5" text="'Houses: ' + '5'"></Label>
-        </StackLayout>
+<StackLayout class="border">
+    <StackLayout orientation="horizontal">
+        <Label class="name p-r-5" [text]="player.Name"></Label>
+        <Label class='fa' [text]="'fa-user' | fonticon"></Label>
     </StackLayout>
-    <StackLayout width="30%">
-        <StackLayout class="p-x-5 pull-right" orientation="horizontal">
-            <Label class="name p-r-5" [text]="player.Name"></Label>
-            <Label class='fa' [text]="'fa-user' | fonticon"></Label>
-        </StackLayout>
-        <StackLayout>
-            <Button class="pull-right btn" text="Buy"></Button>
-            <Button class="pull-right btn btn-primary" text="Buy"></Button>
-        </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Label class='money fa' width="25" [text]="'fa-money' | fonticon"></Label>
+        <Label class="p-l-5" [text]="player.Money"></Label>
+        <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="player.Coal"></Label>
+        <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="player.Oil"></Label>                
+    </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="player.Garbage"></Label>
+        <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
+        <Label class="resources p-l-5" [text]="player.Uranium"></Label>
+        <Label class='fa' width="25" [text]="'fa-home' | fonticon"></Label>
+        <Label class="resources p-l-5" text=" + '5'"></Label>
+    </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Button class="btn" text="Buy"></Button>
+        <Button class="btn" text="Buy"></Button>
+        <Button class="btn" text="Buy"></Button>
+        <Button class="btn" text="Buy"></Button>            
     </StackLayout>
 </StackLayout>
