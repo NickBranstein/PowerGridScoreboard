@@ -24,6 +24,10 @@
             <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
             <Label class="resources p-l-5" [text]="'Uranium: ' + player.Uranium"></Label>
         </StackLayout>
+        <StackLayout class="p-l-5" orientation="horizontal">
+            <Label class='fa' width="25" [text]="'fa-home' | fonticon"></Label>
+            <Label class="resources p-l-5" text="'Houses: ' + '5'"></Label>
+        </StackLayout>
     </StackLayout>
     <StackLayout width="30%">
         <StackLayout class="p-x-5 pull-right" orientation="horizontal">
@@ -31,7 +35,7 @@
             <Label class='fa' [text]="'fa-user' | fonticon"></Label>
         </StackLayout>
         <StackLayout>
-            <Button class="pull-right btn btn-primary" text="Buy"></Button>
+            <Button class="pull-right btn" text="Buy"></Button>
             <Button class="pull-right btn btn-primary" text="Buy"></Button>
         </StackLayout>
     </StackLayout>
