@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, NavigationExtras } from "@angular/router";
 import * as Platform from "platform";
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
 
@@ -47,8 +47,13 @@ export class HomeComponent {
     }
 
     public onTap() {
-        let players: string[] = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
-        this.router.navigate(["scoreboard", this.players]);
+        this.players = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
+        let navigationExtras: NavigationExtras = {
+            queryParams: {
+                "players": this.players
+            }
+        };
+        this.router.navigate(["scoreboard"], navigationExtras);
     }
 
     public onPlayerCardTap() {

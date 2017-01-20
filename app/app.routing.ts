@@ -5,7 +5,7 @@ import { PlayerCardComponent } from "./views/playerCard/playerCard.component";
 export const routes: any = [
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent },
-  { path: "scoreboard/:players", component: ScoreboardComponent },
+  { path: "scoreboard", component: ScoreboardComponent },
   { path: "playerCard", component: PlayerCardComponent }
 ];
 
