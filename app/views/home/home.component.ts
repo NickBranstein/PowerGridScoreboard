@@ -15,7 +15,6 @@ export class HomeComponent {
     public playerThree: string;
     public playerFour: string;
     public playerFive: string;
-    public players: string[];
     public landscape: boolean;
     public hasPlayerTwo: boolean;
     public hasPlayerThree: boolean;
@@ -47,12 +46,13 @@ export class HomeComponent {
     }
 
     public onTap() {
-        this.players = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
+        let players = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
         let navigationExtras: NavigationExtras = {
             queryParams: {
-                "players": this.players
+                "players": JSON.stringify(players)
             }
         };
+        
         this.router.navigate(["scoreboard"], navigationExtras);
     }
 
