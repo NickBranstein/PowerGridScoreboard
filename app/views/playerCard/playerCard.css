@@ -1,6 +1,6 @@
 .name {
     
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .money {
@@ -9,7 +9,7 @@
 
 .border {
     border-color: #888888;
-    border-width: 1px;
+    border-width: 2px;
     border-radius: 6px;
     box-shadow: 100px 100px 50px lightgray;
 }

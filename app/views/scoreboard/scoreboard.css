@@ -1,6 +1,6 @@
 GridLayout {
     width: 100%;
 }
-Label {
+label {
     background-color: green;
 }

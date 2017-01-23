@@ -22,9 +22,9 @@ refer to http://docs.nativescript.org/ui/theme.
 
 .fa {
   font-family: FontAwesome, fontawesome-webfont;
-  font-size: 10px;
+  font-size: 18px;
 }
 
 page {
-  font-size: 10px;
+  font-size: 18px;
 }

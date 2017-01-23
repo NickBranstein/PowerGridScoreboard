@@ -1,28 +1,28 @@
-<StackLayout class="border" margin="10" elevation="40" radius="5">
+<StackLayout class="border">
     <StackLayout orientation="horizontal">
         <Label class="name p-r-5" [text]="player.Name"></Label>
         <Label class='fa' [text]="'fa-user' | fonticon"></Label>
     </StackLayout>
     <StackLayout orientation="horizontal">
         <Label class='money fa' width="25" [text]="'fa-money' | fonticon"></Label>
-        <Label class="p-l-5" [text]="player.Money"></Label>
+        <Label class="p-l-5" width="75" [text]="player.Money"></Label>
         <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
-        <Label class="resources p-l-5" [text]="player.Coal"></Label>
+        <Label class="resources p-l-5" width="75" [text]="player.Coal"></Label>
         <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
-        <Label class="resources p-l-5" [text]="player.Oil"></Label>                
+        <Label class="resources p-l-5" width="75" [text]="player.Oil"></Label>                
     </StackLayout>
     <StackLayout orientation="horizontal">
         <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
-        <Label class="resources p-l-5" [text]="player.Garbage"></Label>
+        <Label class="resources p-l-5" width="75" [text]="player.Garbage"></Label>
         <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
-        <Label class="resources p-l-5" [text]="player.Uranium"></Label>
+        <Label class="resources p-l-5" width="75" [text]="player.Uranium"></Label>
         <Label class='fa' width="25" [text]="'fa-home' | fonticon"></Label>
-        <Label class="resources p-l-5" text=" + '5'"></Label>
+        <Label class="resources p-l-5" width="75" text=" + '5'"></Label>
     </StackLayout>
-    <StackLayout orientation="horizontal">
-        <Button class="btn" text="Buy"></Button>
-        <Button class="btn" text="Buy"></Button>
-        <Button class="btn" text="Buy"></Button>
-        <Button class="btn" text="Buy"></Button>            
-    </StackLayout>
+    <GridLayout rows="auto" columns="*,*,*,*">
+        <Button class="btn power fa" [text]="'fa-bolt' | fonticon" row="0" col="0"></Button>
+        <Button class="btn raw fa" [text]="'fa-coffee' | fonticon" row="0" col="1"></Button>
+        <Button class="btn build fa" [text]="'fa-bank' | fonticon" row="0" col="2"></Button>
+        <Button class="btn paid fa" [text]="'fa-usd' | fonticon" row="0" col="3"></Button>            
+    </GridLayout>
 </StackLayout>
