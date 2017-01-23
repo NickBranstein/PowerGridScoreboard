@@ -8,8 +8,10 @@
 }
 
 .border {
-    border-color: #000000;
-    border-width: 2px;
+    border-color: #888888;
+    border-width: 1px;
+    border-radius: 6px;
+    box-shadow: 100px 100px 50px lightgray;
 }
 
 .coal {
