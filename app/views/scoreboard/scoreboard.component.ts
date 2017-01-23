@@ -2,26 +2,33 @@ import { Component } from "@angular/core";
 import { PageRoute } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
 import { Player } from "../../models/player";
+import { Scoreboard } from "../../models/scoreboard";
+import { ScoreboardService } from "../../services/scoreboardService";
 
 @Component({
     selector: "scoreboard",
+    providers: [ScoreboardService],
     templateUrl: "./views/scoreboard/scoreboard.html",
 })
     
 export class ScoreboardComponent {
-    public players: string[];
-    public playerOne: Player;
-    public playerTwo: Player;
-    public playerThree: Player;
+    private scoreboard: Scoreboard;
 
-    public constructor(private route: ActivatedRoute) {
+    public constructor(private scoreboardService: ScoreboardService, private route: ActivatedRoute) {
+        let players: Array<string>;
+        let continueGame: boolean;
+
         this.route.queryParams.subscribe(params => {
-            this.players = params["players"];
-            console.log(this.players);
+            players = JSON.parse(params["players"]);        
+            continueGame = params["continueGame"];
         });
 
-        this.playerOne = new Player("Nick", 100);
-        this.playerTwo = new Player("Jason", 500);
-        this.playerThree = new Player("David", 3400);
+        if (continueGame && this.scoreboardService.gameDataExists()) {
+            this.scoreboard = this.scoreboardService.load()
+        }
+        else {
+            scoreboardService.clearGameData();
+            this.scoreboard = new Scoreboard(players[0], players[1], players[2], players[3], players[4]);
+        }
     }    
 }
