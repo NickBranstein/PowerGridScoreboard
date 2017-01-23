@@ -15,15 +15,20 @@ export class ScoreboardComponent {
     private scoreboard: Scoreboard;
 
     public constructor(private scoreboardService: ScoreboardService, private route: ActivatedRoute) {
-        let players : Array<string>;
+        let players: Array<string>;
+        let continueGame: boolean;
 
         this.route.queryParams.subscribe(params => {
-            players = JSON.parse(params["players"]);            
+            players = JSON.parse(params["players"]);        
+            continueGame = params["continueGame"];
         });
 
-        if (this.scoreboardService.gameDataExists())
+        if (continueGame && this.scoreboardService.gameDataExists()) {
             this.scoreboard = this.scoreboardService.load()
-        else
+        }
+        else {
+            scoreboardService.clearGameData();
             this.scoreboard = new Scoreboard(players[0], players[1], players[2], players[3], players[4]);
+        }
     }    
 }

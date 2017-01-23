@@ -2,9 +2,11 @@ import { Component } from "@angular/core";
 import { Router, NavigationExtras } from "@angular/router";
 import * as Platform from "platform";
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
+import { ScoreboardService } from "../../services/scoreboardService";
 
 @Component({
     selector: "home",
+    providers: [ScoreboardService],
     templateUrl: "views/home/home.html",
     styleUrls: ["views/home/home.css"]
 })
@@ -20,13 +22,16 @@ export class HomeComponent {
     public hasPlayerThree: boolean;
     public hasPlayerFour: boolean;
     public hasPlayerFive: boolean;
+    public continueGame: boolean;
 
-    public constructor(private router: Router, private fonticon: TNSFontIconService) {
+    public constructor(private router: Router, private fonticon: TNSFontIconService, private scoreboardService: ScoreboardService) {
         if (Platform.screen.mainScreen.widthPixels > 1024) {
             this.landscape = true;
         } else {
             this.landscape = false;
         }
+
+        this.continueGame = scoreboardService.gameDataExists();
     }
     
     public onPlayerTwoTap() {
@@ -45,7 +50,7 @@ export class HomeComponent {
         this.hasPlayerFive = !this.hasPlayerFive;
     }
 
-    public onTap() {
+    public onPlayTap() {
         let players = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
         let navigationExtras: NavigationExtras = {
             queryParams: {
@@ -56,7 +61,13 @@ export class HomeComponent {
         this.router.navigate(["scoreboard"], navigationExtras);
     }
 
-    public onPlayerCardTap() {
-        this.router.navigate(["playerCard"]);
+    public onContinueTap() {
+         let navigationExtras: NavigationExtras = {
+            queryParams: {
+                "continueGame": true
+            }
+         };
+        
+        this.router.navigate(["scoreboard"], navigationExtras);
     }
 }

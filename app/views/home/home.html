@@ -39,11 +39,9 @@
                     <TextField class="input" [visibility]="hasPlayerFive ? 'visible' : 'collapsed'" hint="enter name" [(ngModel)]="playerFive"></TextField>
                 </StackLayout>
             </StackLayout>
-            <StackLayout class="m-x-auto">
-                <Button text="Play!" (tap)="onTap()" class="btn btn-primary btn-rounded-lg"></Button>
-            </StackLayout>
-            <StackLayout class="m-x-auto">
-                <Button text="Test Player Card" (tap)="onPlayerCardTap()" class="btn btn-primary btn-rounded-lg"></Button>
+            <StackLayout class="m-x-auto" orientation="horizontal">
+                <Button text="Play!" (tap)="onPlayTap()" class="btn btn-primary btn-rounded-lg"></Button>
+                <Button text="Continue" [visibility]="continueGame ? 'visible' : 'collapsed'" (tap)="onContinueTap()" class="btn btn-primary btn-rounded-lg"></Button>
             </StackLayout>
         </StackLayout>
     </ScrollView>
