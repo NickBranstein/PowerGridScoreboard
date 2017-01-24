@@ -5,19 +5,19 @@
     </StackLayout>
     <StackLayout orientation="horizontal">
         <Label class='money fa' width="25" [text]="'fa-money' | fonticon"></Label>
-        <Label class="p-l-5" width="75" [text]="player.Money"></Label>
+        <Label class="p-l-5" width="60" [text]="player.Money"></Label>
         <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
-        <Label class="resources p-l-5" width="75" [text]="player.Coal"></Label>
+        <Label class="resources p-l-5" width="60" [text]="player.Coal"></Label>
         <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
-        <Label class="resources p-l-5" width="75" [text]="player.Oil"></Label>                
+        <Label class="resources p-l-5" width="60" [text]="player.Oil"></Label>                
     </StackLayout>
     <StackLayout orientation="horizontal">
         <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
-        <Label class="resources p-l-5" width="75" [text]="player.Garbage"></Label>
+        <Label class="resources p-l-5" width="60" [text]="player.Garbage"></Label>
         <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
-        <Label class="resources p-l-5" width="75" [text]="player.Uranium"></Label>
+        <Label class="resources p-l-5" width="60" [text]="player.Uranium"></Label>
         <Label class='fa' width="25" [text]="'fa-home' | fonticon"></Label>
-        <Label class="resources p-l-5" width="75" text=" + '5'"></Label>
+        <Label class="resources p-l-5" width="60" [text]="player.Houses"></Label>
     </StackLayout>
     <GridLayout rows="auto" columns="*,*,*,*">
         <Button class="btn power fa" [text]="'fa-bolt' | fonticon" row="0" col="0"></Button>

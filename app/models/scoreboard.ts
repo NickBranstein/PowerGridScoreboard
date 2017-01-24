@@ -8,10 +8,11 @@ export class Scoreboard {
     PlayerFive: Player;
 
     constructor(playerOne: string, playerTwo: string, playerThree?: string, playerFour?: string, playerFive?: string) {
-        this.PlayerOne = new Player(playerOne);
-        this.PlayerTwo = new Player(playerTwo);
-        this.PlayerThree = new Player(playerThree);
-        this.PlayerFour = new Player(playerFour);
-        this.PlayerFive = new Player(playerFive);
+        let startingMoney = 50;
+        this.PlayerOne = new Player(playerOne, startingMoney);
+        this.PlayerTwo = new Player(playerTwo, startingMoney);
+        this.PlayerThree = new Player(playerThree, playerThree != null ? startingMoney : null);
+        this.PlayerFour = new Player(playerFour, playerFour != null ? startingMoney : null);
+        this.PlayerFive = new Player(playerFive, playerFive != null ? startingMoney : null);
     }
 }
