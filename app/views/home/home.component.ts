@@ -18,7 +18,6 @@ export class HomeComponent {
     public playerFour: string;
     public playerFive: string;
     public landscape: boolean;
-    public hasPlayerTwo: boolean;
     public hasPlayerThree: boolean;
     public hasPlayerFour: boolean;
     public hasPlayerFive: boolean;
@@ -32,10 +31,6 @@ export class HomeComponent {
         }
 
         this.continueGame = scoreboardService.gameDataExists();
-    }
-    
-    public onPlayerTwoTap() {
-        this.hasPlayerTwo = !this.hasPlayerTwo;
     }
 
     public onPlayerThreeTap() {

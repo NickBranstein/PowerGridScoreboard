@@ -12,7 +12,7 @@
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
-                        <Label class="fa" [text]="'fa-user' | fonticon" (tap)="onPlayerTwoTap()"></Label>
+                        <Label class="fa" [text]="'fa-user' | fonticon"></Label>
                         <Label class="label-active" text="Player 2"></Label>
                     </StackLayout>
                     <TextField required class="input" visibility="visible" hint="enter name" [(ngModel)]="playerTwo" #p2="ngModel"></TextField>
@@ -20,21 +20,21 @@
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
                         <Label [class]="hasPlayerThree ? 'fa' : 'fa disabled'" [text]="'fa-user' | fonticon" (tap)="onPlayerThreeTap()"></Label>
-                        <Label [class]="hasPlayerThree ? 'label-active' : 'label'" text="Player 3"></Label>
+                        <Label [class]="hasPlayerThree ? 'label-active' : 'label'" text="Player 3" (tap)="onPlayerThreeTap()"></Label>
                     </StackLayout>
                     <TextField required class="input" [visibility]="hasPlayerThree ? 'visible' : 'collapse'" hint="enter name" [(ngModel)]="playerThree" #p3="ngModel"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
                         <Label [class]="hasPlayerFour ? 'fa' : 'fa disabled'" [text]="'fa-user' | fonticon" (tap)="onPlayerFourTap()"></Label>
-                        <Label [class]="hasPlayerFour ? 'label-active' : 'label'" text="Player 4"></Label>
+                        <Label [class]="hasPlayerFour ? 'label-active' : 'label'" text="Player 4" (tap)="onPlayerFourTap()"></Label>
                     </StackLayout>
                     <TextField required class="input" [visibility]="hasPlayerFour ? 'visible' : 'collapse'" hint="enter name" [(ngModel)]="playerFour" #p4="ngModel"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
                         <Label [class]="hasPlayerFive ? 'fa' : 'fa disabled'" [text]="'fa-user' | fonticon" (tap)="onPlayerFiveTap()"></Label>
-                        <Label [class]="hasPlayerFive ? 'label-active' : 'label'" text="Player 5"></Label>
+                        <Label [class]="hasPlayerFive ? 'label-active' : 'label'" text="Player 5" (tap)="onPlayerFiveTap()"></Label>
                     </StackLayout>
                     <TextField required class="input" [visibility]="hasPlayerFive ? 'visible' : 'collapse'" hint="enter name" [(ngModel)]="playerFive" #p5="ngModel"></TextField>
                 </StackLayout>
