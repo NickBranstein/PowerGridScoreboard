@@ -19,7 +19,7 @@ export class ScoreboardComponent {
         let continueGame: boolean;
 
         this.route.queryParams.subscribe(params => {
-            players = JSON.parse(params["players"]);        
+            players = params["players"] != null ? JSON.parse(params["players"]) : null;       
             continueGame = params["continueGame"];
         });
 
@@ -30,5 +30,7 @@ export class ScoreboardComponent {
             scoreboardService.clearGameData();
             this.scoreboard = new Scoreboard(players[0], players[1], players[2], players[3], players[4]);
         }
+
+        scoreboardService.save(this.scoreboard);
     }    
 }
