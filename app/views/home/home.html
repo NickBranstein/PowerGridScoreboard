@@ -41,10 +41,11 @@
             </StackLayout>
             <StackLayout class="m-x-auto" orientation="horizontal">
                 <Button text="Play!" (tap)="onPlayTap()" 
-                    [visibility]="p1.valid && p2.valid 
-                        && (hasPlayerThree ? p3.valid : true)
-                        && (hasPlayerFour ? p4.valid : true)
-                        && (hasPlayerFive ? p5.valid : true) ? 'visible' : 'collapse'" class="btn btn-primary btn-rounded-lg"></Button>
+                    [class.disabled]="!p1.valid || !p2.valid 
+                        || (hasPlayerThree ? !p3.valid : false)
+                        || (hasPlayerFour ? !p4.valid : false)
+                        || (hasPlayerFive ? !p5.valid : false)"
+                    class="btn btn-primary btn-rounded-lg"></Button>
                 <Button text="Continue" 
                     [visibility]="continueGame ? 'visible' : 'collapse'" (tap)="onContinueTap()" class="btn btn-primary btn-rounded-lg"></Button>
             </StackLayout>

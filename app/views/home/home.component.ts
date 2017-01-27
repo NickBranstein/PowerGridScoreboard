@@ -46,6 +46,12 @@ export class HomeComponent {
     }
 
     public onPlayTap() {
+        if (this.playerOne == null || this.playerTwo == null
+            || (this.hasPlayerThree && this.playerThree == null)
+            || (this.hasPlayerFour && this.playerFour == null)
+            || (this.hasPlayerFive && this.playerFive == null))
+            return;
+
         let players = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour, this.playerFive];
         let navigationExtras: NavigationExtras = {
             queryParams: {
