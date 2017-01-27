@@ -8,40 +8,48 @@
                         <Label class='fa' [text]="'fa-user' | fonticon"></Label>
                         <Label class="label-active" text="Player 1"></Label>
                     </StackLayout>
-                    <TextField class="input" hint="enter name" [(ngModel)]="playerOne"></TextField>
+                    <TextField required class="input" hint="enter name" [(ngModel)]="playerOne" #p1="ngModel"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
                         <Label class="fa" [text]="'fa-user' | fonticon" (tap)="onPlayerTwoTap()"></Label>
                         <Label class="label-active" text="Player 2"></Label>
                     </StackLayout>
-                    <TextField class="input" visibility="visible" hint="enter name" [(ngModel)]="playerTwo"></TextField>
+                    <TextField required class="input" visibility="visible" hint="enter name" [(ngModel)]="playerTwo" #p2="ngModel"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
                         <Label [class]="hasPlayerThree ? 'fa' : 'fa disabled'" [text]="'fa-user' | fonticon" (tap)="onPlayerThreeTap()"></Label>
                         <Label [class]="hasPlayerThree ? 'label-active' : 'label'" text="Player 3"></Label>
                     </StackLayout>
-                    <TextField class="input" [visibility]="hasPlayerThree ? 'visible' : 'collapsed'" hint="enter name" [(ngModel)]="playerThree"></TextField>
+                    <TextField required class="input" [visibility]="hasPlayerThree ? 'visible' : 'collapse'" hint="enter name" [(ngModel)]="playerThree" #p3="ngModel"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
                         <Label [class]="hasPlayerFour ? 'fa' : 'fa disabled'" [text]="'fa-user' | fonticon" (tap)="onPlayerFourTap()"></Label>
                         <Label [class]="hasPlayerFour ? 'label-active' : 'label'" text="Player 4"></Label>
                     </StackLayout>
-                    <TextField class="input" [visibility]="hasPlayerFour ? 'visible' : 'collapsed'" hint="enter name" [(ngModel)]="playerFour"></TextField>
+                    <TextField required class="input" [visibility]="hasPlayerFour ? 'visible' : 'collapse'" hint="enter name" [(ngModel)]="playerFour" #p4="ngModel"></TextField>
                 </StackLayout>
                 <StackLayout class="input-field">
                     <StackLayout orientation="horizontal">
                         <Label [class]="hasPlayerFive ? 'fa' : 'fa disabled'" [text]="'fa-user' | fonticon" (tap)="onPlayerFiveTap()"></Label>
                         <Label [class]="hasPlayerFive ? 'label-active' : 'label'" text="Player 5"></Label>
                     </StackLayout>
-                    <TextField class="input" [visibility]="hasPlayerFive ? 'visible' : 'collapsed'" hint="enter name" [(ngModel)]="playerFive"></TextField>
+                    <TextField required class="input" [visibility]="hasPlayerFive ? 'visible' : 'collapse'" hint="enter name" [(ngModel)]="playerFive" #p5="ngModel"></TextField>
                 </StackLayout>
             </StackLayout>
             <StackLayout class="m-x-auto" orientation="horizontal">
-                <Button text="Play!" (tap)="onPlayTap()" class="btn btn-primary btn-rounded-lg"></Button>
-                <Button text="Continue" [visibility]="continueGame ? 'visible' : 'collapsed'" (tap)="onContinueTap()" class="btn btn-primary btn-rounded-lg"></Button>
+                <Button text="Play!" (tap)="onPlayTap()" 
+                    [visibility]="p1.valid && p2.valid 
+                        && (hasPlayerThree ? p3.valid : true)
+                        && (hasPlayerFour ? p4.valid : true)
+                        && (hasPlayerFive ? p5.valid : true) ? 'visible' : 'collapse'" class="btn btn-primary btn-rounded-lg"></Button>
+                <Button text="Continue" 
+                    [visibility]="continueGame &&p1.valid && p2.valid 
+                        && (hasPlayerThree ? p3.valid : true)
+                        && (hasPlayerFour ? p4.valid : true)
+                        && (hasPlayerFive ? p5.valid : true) ? 'visible' : 'collapse'" (tap)="onContinueTap()" class="btn btn-primary btn-rounded-lg"></Button>
             </StackLayout>
         </StackLayout>
     </ScrollView>
