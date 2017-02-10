@@ -9,19 +9,19 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./views/home/home.component";
 import { ScoreboardComponent } from "./views/scoreboard/scoreboard.component";
 import { PlayerCardComponent } from "./views/playerCard/playerCard.component";
+import { BuildHousesComponent } from "./views/modals/buildHouses/buildHouses.component";
 
 @NgModule({
     declarations: [
         AppComponent,
+        BuildHousesComponent,
         ...navigatableComponents
     ],
     bootstrap: [
         AppComponent
     ],
     entryComponents: [
-        HomeComponent,
-        ScoreboardComponent,
-        PlayerCardComponent
+        BuildHousesComponent
     ],
     imports: [
         NativeScriptModule,

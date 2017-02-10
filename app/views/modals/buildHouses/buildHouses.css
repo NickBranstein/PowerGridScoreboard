@@ -1,0 +1,10 @@
+.divider {
+    border-bottom-width: 1;
+    border-bottom-color: #cfcfcf;
+    border-bottom-style: solid;
+}
+
+.bordered {
+    border-width: 1;
+    border-color: #000000;
+}

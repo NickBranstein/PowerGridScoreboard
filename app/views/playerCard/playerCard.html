@@ -22,7 +22,7 @@
     <GridLayout rows="auto" columns="*,*,*,*">
         <Button class="btn power fa" [text]="'fa-bolt' | fonticon" row="0" col="0"></Button>
         <Button class="btn raw fa" [text]="'fa-coffee' | fonticon" row="0" col="1"></Button>
-        <Button class="btn build fa" [text]="'fa-bank' | fonticon" row="0" col="2"></Button>
+        <Button class="btn build fa" [text]="'fa-bank' | fonticon" row="0" col="2" (tap)="buildHouses()"></Button>
         <Button class="btn paid fa" [text]="'fa-usd' | fonticon" row="0" col="3"></Button>            
     </GridLayout>
 </StackLayout>
