@@ -18,9 +18,9 @@ export class BuildHousesComponent {
     }
 
     public totalHouses(): string {
-        let poop = this.player.Houses + parseInt(this.houseQuantity); // f u angular weird binding issue
-        console.log(poop);
-        return 'Total Houses ' + (this.houseQuantity != null ? poop : this.player.Houses);
+        let intHouses = this.player.Houses + parseInt(this.houseQuantity); // f u angular weird binding issue
+
+        return 'Total Houses ' + (this.houseQuantity != null ? intHouses : this.player.Houses);
     }
 
     public close(result: string) {
