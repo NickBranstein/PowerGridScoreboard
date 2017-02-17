@@ -10,7 +10,10 @@
     </GridLayout>
     <GridLayout columns="20, *, 20, *, 20" rows="auto">
         <StackLayout row="0" col="1" class="pull-right" orientation="vertical">
-            <Label [text]="'Current Houses ' + player.Houses"></Label>
+            <StackLayout orientation="horizontal">
+                <Label text="Current Houses "></Label>
+                <Label [text]="player.Houses"></Label>
+            </StackLayout>
             <StackLayout orientation="horizontal">
                 <Label class="divider" text="Houses to Buy"></Label>
                 <TextField class="bordered m-l-10" width="25" [(ngModel)]="houseQuantity"></TextField>

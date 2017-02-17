@@ -33,4 +33,8 @@ export class ScoreboardComponent {
 
         scoreboardService.save(this.scoreboard);
     }    
+
+    public onPlayerChange(): void{
+        this.scoreboardService.save(this.scoreboard);
+    }
 }

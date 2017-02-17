@@ -24,7 +24,11 @@ export class BuildHousesComponent {
     }
 
     public close(result: string) {
-        console.log(this.player.Name);
-        this.params.closeCallback('poop');
+        if (result == 'OK') {
+            this.player.Money -= this.housePrice;
+            this.player.Houses += <number>this.houseQuantity;
+        }
+
+        this.params.closeCallback(this.player);
     }
 }
