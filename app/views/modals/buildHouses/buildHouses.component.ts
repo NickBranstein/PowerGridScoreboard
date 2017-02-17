@@ -25,10 +25,12 @@ export class BuildHousesComponent {
 
     public close(result: string) {
         if (result == 'OK') {
-            this.player.Money -= this.housePrice;
-            this.player.Houses += <number>this.houseQuantity;
-        }
+            let intHouses = this.player.Houses + parseInt(this.houseQuantity); // f u angular weird binding issue
 
+            this.player.Money -= this.housePrice;
+            this.player.Houses += intHouses;
+        }
+        
         this.params.closeCallback(this.player);
     }
 }
