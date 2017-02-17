@@ -18,14 +18,14 @@ export class BuildHousesComponent {
     }
 
     public totalHouses(): string {
-        let intHouses = this.player.Houses + parseInt(this.houseQuantity); // f u angular weird binding issue
+        let intHouses = this.player.Houses + parseInt(this.houseQuantity); // weird angular binding issue
 
         return 'Total Houses ' + (this.houseQuantity != null ? intHouses : this.player.Houses);
     }
 
     public close(result: string) {
         if (result == 'OK') {
-            let intHouses = this.player.Houses + parseInt(this.houseQuantity); // f u angular weird binding issue
+            let intHouses = this.player.Houses + parseInt(this.houseQuantity); // weird angular binding issue
 
             this.player.Money -= this.housePrice;
             this.player.Houses += intHouses;
