@@ -10,18 +10,21 @@ import { HomeComponent } from "./views/home/home.component";
 import { ScoreboardComponent } from "./views/scoreboard/scoreboard.component";
 import { PlayerCardComponent } from "./views/playerCard/playerCard.component";
 import { BuildHousesComponent } from "./views/modals/buildHouses/buildHouses.component";
+import { BureaucracyComponent } from "./views/modals/bureaucracy/bureaucracy.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         BuildHousesComponent,
+        BureaucracyComponent,
         ...navigatableComponents
     ],
     bootstrap: [
         AppComponent
     ],
     entryComponents: [
-        BuildHousesComponent
+        BuildHousesComponent,
+        BureaucracyComponent
     ],
     imports: [
         NativeScriptModule,

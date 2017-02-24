@@ -3,6 +3,7 @@ import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/mod
 import { TNSFontIconService } from "nativescript-ngx-fonticon";
 import { Player } from "../../models/player";
 import { BuildHousesComponent } from "../modals/buildHouses/buildHouses.component";
+import { BureaucracyComponent } from "../modals/bureaucracy/bureaucracy.component";
 
 @Component({
     selector: "playerCard",
@@ -27,6 +28,19 @@ export class PlayerCardComponent {
         };
 
         this.modalService.showModal(BuildHousesComponent, options)
+            .then((dialogResult: Player) => {
+                this.player = dialogResult;
+                this.change.emit();
+            });
+    }
+    public bureaucracy() {
+        let options: ModalDialogOptions = {
+            context: this.player,
+            fullscreen: true,
+            viewContainerRef: this.viewContainerRef
+        };
+
+        this.modalService.showModal(BureaucracyComponent, options)
             .then((dialogResult: Player) => {
                 this.player = dialogResult;
                 this.change.emit();

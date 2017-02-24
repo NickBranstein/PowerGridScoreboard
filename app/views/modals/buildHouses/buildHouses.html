@@ -5,7 +5,7 @@
             <Label class='fa' [text]="'fa-user' | fonticon"></Label>
         </StackLayout>
         <StackLayout row="0" col="1" class="m-x-auto" orientation="horizontal">
-            <Label text="Build Houses!"></Label>
+            <Label text="Build Houses"></Label>
         </StackLayout>
     </GridLayout>
     <GridLayout columns="20, *, 20, *, 20" rows="auto">
@@ -13,7 +13,7 @@
                 <Label [text]="'Current Houses ' + player.Houses"></Label>
             <StackLayout orientation="horizontal">
                 <Label class="divider" text="Houses to Buy"></Label>
-                <TextField class="bordered m-l-10" width="25" [(ngModel)]="houseQuantity"></TextField>
+                <TextField class="bordered m-l-10" width="35" [(ngModel)]="houseQuantity"></TextField>
             </StackLayout>
             <Label [text]="totalHouses()"></Label>
             <Button class="btn btn-primary btn-rounded-lg" text="ok" (tap)="close('OK')"></Button>
@@ -22,7 +22,7 @@
             <Label [text]="'Total Electro ' + player.Money"></Label>
             <StackLayout orientation="horizontal">
                 <Label class="divider" text="House(s) Cost"></Label>
-                <TextField class="bordered m-l-10" width="25" [(ngModel)]="housePrice"></TextField>
+                <TextField class="bordered m-l-10" width="35" [(ngModel)]="housePrice"></TextField>
             </StackLayout>
             <Label [text]="'Electro Balance ' + (housePrice != null ? player.Money - housePrice : player.Money)"></Label>
             <Button class="btn btn-primary btn-rounded-lg" text="cancel" (tap)="close('Cancel')"></Button>

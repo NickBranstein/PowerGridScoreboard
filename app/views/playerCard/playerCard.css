@@ -29,3 +29,29 @@
 .uranium {
     color: red;
 }
+
+.power {
+  font-family: FontAwesome, fontawesome-webfont;
+  font-size: 10px;
+  width: 40px;
+}
+
+.raw {
+  font-family: FontAwesome, fontawesome-webfont;
+  font-size: 10px;
+  width: 40px;
+}
+
+
+.build {
+  font-family: FontAwesome, fontawesome-webfont;
+  font-size: 10px;
+  width: 40px;
+}
+
+
+.bureaucracy {
+  font-family: FontAwesome, fontawesome-webfont;
+  font-size: 10px;
+  width: 40px;
+}

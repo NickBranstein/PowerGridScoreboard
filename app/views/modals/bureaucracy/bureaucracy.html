@@ -1,0 +1,60 @@
+<StackLayout>
+     <GridLayout columns="*, *, *" rows="auto">
+        <StackLayout row="0" col="0" class="p-l-5" orientation="horizontal">
+            <Label class="name p-r-5" [text]="player.Name"></Label>
+            <Label class='fa' [text]="'fa-user' | fonticon"></Label>
+        </StackLayout>
+        <StackLayout row="0" col="1" class="m-x-auto" orientation="horizontal">
+            <Label text="Bureaucracy"></Label>
+        </StackLayout>
+    </GridLayout>
+    <GridLayout columns="20, *, 20, *, 20" rows="auto">
+        <StackLayout row="0" col="1" class="pull-right" orientation="vertical">
+            <StackLayout orientation="horizontal" class="pull-right">
+                <Label class="" text="Number of Houses Powered:"></Label>
+                <TextField class="bordered m-l-10" width="35" [(ngModel)]="housesPowered"></TextField>
+            </StackLayout>
+            <StackLayout orientation="horizontal" class="pull-right">
+                <Label class="" text="Coal used:"></Label>
+                <TextField class="bordered m-l-10" width="35" [(ngModel)]="coalUsed"></TextField>
+            </StackLayout>
+            <StackLayout orientation="horizontal" class="pull-right">
+                <Label class="" text="Oil used:"></Label>
+                <TextField class="bordered m-l-10" width="35" [(ngModel)]="oilUsed"></TextField>
+            </StackLayout>
+            <StackLayout orientation="horizontal" class="pull-right">
+                <Label class="" text="Garbage used:"></Label>
+                <TextField class="bordered m-l-10" width="35" [(ngModel)]="garbageUsed"></TextField>
+            </StackLayout>
+            <StackLayout orientation="horizontal" class="pull-right">
+                <Label class="" text="Uranium used:"></Label>
+                <TextField class="bordered m-l-10" width="35" [(ngModel)]="uraniumUsed"></TextField>
+            </StackLayout>
+            <Button class="btn btn-primary btn-rounded-lg" text="ok" (tap)="close('OK')"></Button>
+        </StackLayout>
+        <StackLayout row="0" col="3" class="pull-left" orientation="vertical">
+            <StackLayout class="pull-right">
+                <Label class="pull-right" [text]="'Total Electro  ' + player.Money"></Label>
+                <Label class="divider pull-right" [text]="'Electro Earned  ' + getPayout(housesPowered)"></Label>
+                <Label class="pull-right" [text]="'Electro Balance  ' + (getPayout(housesPowered) != null ? player.Money + getPayout(housesPowered) : player.Money)"></Label>            
+            </StackLayout>
+            <StackLayout orientation="vertical" class="pull-right">        
+                <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
+                <Label class="pull-right" [text]="player.Coal + '/' + (coalUsed != null ? player.Coal - coalUsed : player.Coal)"></Label>           
+            </StackLayout>
+            <StackLayout orientation="vertical" class="pull-right">
+                <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
+                <Label class="pull-right" [text]="player.Oil + '/' + (oilUsed != null ? player.Oil - oilUsed : player.Oil)"></Label>       
+            </StackLayout>
+            <StackLayout orientation="vertical" class="pull-right">
+                <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
+                <Label class="pull-right" [text]="player.Garbage + '/' + (garbageUsed != null ? player.Garbage - garbageUsed : player.Garbage)"></Label>          
+            </StackLayout>
+            <StackLayout orientation="vertical" class="pull-right">
+                <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
+                <Label class="pull-right" [text]="player.Uranium + '/' + (uraniumUsed != null ? player.Uranium - uraniumUsed : player.Uranium)"></Label>
+            </StackLayout>
+            <Button class="btn btn-primary btn-rounded-lg" text="cancel" (tap)="close('Cancel')"></Button>
+        </StackLayout>
+    </GridLayout>        
+</StackLayout>
