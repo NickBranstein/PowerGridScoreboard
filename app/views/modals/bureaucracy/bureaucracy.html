@@ -1,60 +1,58 @@
 <StackLayout>
-     <GridLayout columns="*, *, *" rows="auto">
+     <GridLayout columns="auto, auto, *" rows="auto">
         <StackLayout row="0" col="0" class="p-l-5" orientation="horizontal">
-            <Label class="name p-r-5" [text]="player.Name"></Label>
             <Label class='fa' [text]="'fa-user' | fonticon"></Label>
+            <Label class="name p-r-5" [text]="player.Name"></Label>
         </StackLayout>
         <StackLayout row="0" col="1" class="m-x-auto" orientation="horizontal">
-            <Label text="Bureaucracy"></Label>
+            <Label text=" -  Bureaucracy"></Label>
         </StackLayout>
-    </GridLayout>
-    <GridLayout columns="20, *, 20, *, 20" rows="auto">
-        <StackLayout row="0" col="1" class="pull-right" orientation="vertical">
-            <StackLayout orientation="horizontal" class="pull-right">
-                <Label class="" text="Number of Houses Powered:"></Label>
+    </GridLayout>    
+    <GridLayout columns="auto, auto, *" rows="auto" class="">
+        <StackLayout orientation="vertical" row="0" col="0" class="p-l-5">           
+            <StackLayout orientation="horizontal" class="header">   
+                <Label class='home fa' width="25" [text]="'fa-home' | fonticon"></Label>
+                <Label class='' text="Houses powered:  "></Label>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="housesPowered"></TextField>
             </StackLayout>
+            <StackLayout orientation="horizontal" class="pull-right"> 
+                <Label text="Resources used:           "></Label>
+            </StackLayout>
             <StackLayout orientation="horizontal" class="pull-right">
-                <Label class="" text="Coal used:"></Label>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="coalUsed"></TextField>
-            </StackLayout>
-            <StackLayout orientation="horizontal" class="pull-right">
-                <Label class="" text="Oil used:"></Label>
+                <StackLayout>
+                    <Label class="" [text]="player.Coal + '/' + (coalUsed != null ? player.Coal - coalUsed : player.Coal)"></Label> 
+                    <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
+                </StackLayout>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="oilUsed"></TextField>
+                <StackLayout>
+                    <Label class="" [text]="player.Oil + '/' + (oilUsed != null ? player.Oil - oilUsed : player.Oil)"></Label>
+                    <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
+                </StackLayout>
             </StackLayout>
             <StackLayout orientation="horizontal" class="pull-right">
-                <Label class="" text="Garbage used:"></Label>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="garbageUsed"></TextField>
-            </StackLayout>
-            <StackLayout orientation="horizontal" class="pull-right">
-                <Label class="" text="Uranium used:"></Label>
+                <StackLayout>
+                    <Label class="" [text]="player.Garbage + '/' + (garbageUsed != null ? player.Garbage - garbageUsed : player.Garbage)"></Label>  
+                    <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
+                </StackLayout>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="uraniumUsed"></TextField>
+                <StackLayout>
+                    <Label class="" [text]="player.Uranium + '/' + (uraniumUsed != null ? player.Uranium - uraniumUsed : player.Uranium)"></Label> 
+                    <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
+                </StackLayout>
             </StackLayout>
-            <Button class="btn btn-primary btn-rounded-lg" text="ok" (tap)="close('OK')"></Button>
         </StackLayout>
-        <StackLayout row="0" col="3" class="pull-left" orientation="vertical">
-            <StackLayout class="pull-right">
-                <Label class="pull-right" [text]="'Total Electro  ' + player.Money"></Label>
-                <Label class="divider pull-right" [text]="'Electro Earned  ' + getPayout(housesPowered)"></Label>
-                <Label class="pull-right" [text]="'Electro Balance  ' + (getPayout(housesPowered) != null ? player.Money + getPayout(housesPowered) : player.Money)"></Label>            
+        <StackLayout class="pull-left" orientation="vertical" row="0" col="1" >
+            <StackLayout orientation="horizontal" class="header">   
+                <Label class="" [text]="'Electro:  ' + player.Money"></Label>
+                <Label class="" [text]="' / ' + getPayout(housesPowered)"></Label>
+                <Label class="" [text]="'/ ' + (getPayout(housesPowered) != null ? player.Money + getPayout(housesPowered) : player.Money)"></Label>  
             </StackLayout>
-            <StackLayout orientation="vertical" class="pull-right">        
-                <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
-                <Label class="pull-right" [text]="player.Coal + '/' + (coalUsed != null ? player.Coal - coalUsed : player.Coal)"></Label>           
+            <StackLayout orientation="horizontal" class="header"> 
+                <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')"></Button>
+                <Button class="btn btn-primary btn-rounded-lg fa red" width="50" [text]="'fa-times' | fonticon" (tap)="close('Cancel')"></Button>
             </StackLayout>
-            <StackLayout orientation="vertical" class="pull-right">
-                <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
-                <Label class="pull-right" [text]="player.Oil + '/' + (oilUsed != null ? player.Oil - oilUsed : player.Oil)"></Label>       
-            </StackLayout>
-            <StackLayout orientation="vertical" class="pull-right">
-                <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
-                <Label class="pull-right" [text]="player.Garbage + '/' + (garbageUsed != null ? player.Garbage - garbageUsed : player.Garbage)"></Label>          
-            </StackLayout>
-            <StackLayout orientation="vertical" class="pull-right">
-                <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
-                <Label class="pull-right" [text]="player.Uranium + '/' + (uraniumUsed != null ? player.Uranium - uraniumUsed : player.Uranium)"></Label>
-            </StackLayout>
-            <Button class="btn btn-primary btn-rounded-lg" text="cancel" (tap)="close('Cancel')"></Button>
         </StackLayout>
-    </GridLayout>        
+    </GridLayout>
 </StackLayout>

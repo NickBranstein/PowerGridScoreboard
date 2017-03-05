@@ -15,8 +15,7 @@
                 <Label class="divider" text="Houses to Buy"></Label>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="houseQuantity"></TextField>
             </StackLayout>
-            <Label [text]="totalHouses()"></Label>
-            <Button class="btn btn-primary btn-rounded-lg" text="ok" (tap)="close('OK')"></Button>
+            <Label [text]="totalHouses()"></Label>            
         </StackLayout>
         <StackLayout row="0" col="3" class="pull-left" orientation="vertical">
             <Label [text]="'Total Electro ' + player.Money"></Label>
@@ -25,7 +24,10 @@
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="housePrice"></TextField>
             </StackLayout>
             <Label [text]="'Electro Balance ' + (housePrice != null ? player.Money - housePrice : player.Money)"></Label>
-            <Button class="btn btn-primary btn-rounded-lg" text="cancel" (tap)="close('Cancel')"></Button>
+            <StackLayout orientation="horizontal">
+                <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')"></Button>
+                <Button class="btn btn-primary btn-rounded-lg fa red" width="50" [text]="'fa-times' | fonticon" (tap)="close('Cancel')"></Button>
+            </StackLayout>
         </StackLayout>
     </GridLayout>        
 </StackLayout>
