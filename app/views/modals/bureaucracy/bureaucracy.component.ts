@@ -35,8 +35,6 @@ export class BureaucracyComponent {
     }
     
     public getPayout(houses: any): number {
-        //refactor to dictionary house key, payout value
-        console.log(houses);
         houses = parseInt(houses);
         if(houses === 0) return 10;
         if(houses === 1) return 22;
