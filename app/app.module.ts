@@ -11,12 +11,16 @@ import { ScoreboardComponent } from "./views/scoreboard/scoreboard.component";
 import { PlayerCardComponent } from "./views/playerCard/playerCard.component";
 import { BuildHousesComponent } from "./views/modals/buildHouses/buildHouses.component";
 import { BureaucracyComponent } from "./views/modals/bureaucracy/bureaucracy.component";
+import { BuyResourcesComponent } from "./views/modals/buyResources/buyResources.component";
+import { BuyPowerComponent } from "./views/modals/buyPower/buyPower.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         BuildHousesComponent,
         BureaucracyComponent,
+        BuyResourcesComponent,
+        BuyPowerComponent,
         ...navigatableComponents
     ],
     bootstrap: [
@@ -24,7 +28,9 @@ import { BureaucracyComponent } from "./views/modals/bureaucracy/bureaucracy.com
     ],
     entryComponents: [
         BuildHousesComponent,
-        BureaucracyComponent
+        BureaucracyComponent,
+        BuyResourcesComponent,
+        BuyPowerComponent,
     ],
     imports: [
         NativeScriptModule,

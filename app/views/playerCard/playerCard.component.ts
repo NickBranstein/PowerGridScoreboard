@@ -4,6 +4,8 @@ import { TNSFontIconService } from "nativescript-ngx-fonticon";
 import { Player } from "../../models/player";
 import { BuildHousesComponent } from "../modals/buildHouses/buildHouses.component";
 import { BureaucracyComponent } from "../modals/bureaucracy/bureaucracy.component";
+import { BuyResourcesComponent } from "../modals/buyResources/buyResources.component";
+import { BuyPowerComponent } from "../modals/buyPower/buyPower.component";
 
 @Component({
     selector: "playerCard",
@@ -41,6 +43,32 @@ export class PlayerCardComponent {
         };
 
         this.modalService.showModal(BureaucracyComponent, options)
+            .then((dialogResult: Player) => {
+                this.player = dialogResult;
+                this.change.emit();
+            });
+    }
+    public buyPower() {
+        let options: ModalDialogOptions = {
+            context: this.player,
+            fullscreen: true,
+            viewContainerRef: this.viewContainerRef
+        };
+
+        this.modalService.showModal(BuyPowerComponent, options)
+            .then((dialogResult: Player) => {
+                this.player = dialogResult;
+                this.change.emit();
+            });
+    }
+    public buyResources() {
+        let options: ModalDialogOptions = {
+            context: this.player,
+            fullscreen: true,
+            viewContainerRef: this.viewContainerRef
+        };
+
+        this.modalService.showModal(BuyResourcesComponent, options)
             .then((dialogResult: Player) => {
                 this.player = dialogResult;
                 this.change.emit();
