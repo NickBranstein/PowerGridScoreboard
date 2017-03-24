@@ -46,8 +46,8 @@
         <StackLayout class="pull-left" orientation="vertical" row="0" col="1" >
             <StackLayout orientation="horizontal" class="header">   
                 <Label class="" [text]="'Electro:  ' + player.Money"></Label>
-                <Label class="" [text]="' / ' + getPayout(housesPowered)"></Label>
-                <Label class="" [text]="'/ ' + (getPayout(housesPowered) != null ? player.Money + getPayout(housesPowered) : player.Money)"></Label>  
+                <Label class="" [text]=""></Label>
+                <Label class="" [text]=""></Label>  
             </StackLayout>
             <StackLayout orientation="horizontal" class="header"> 
                 <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')"></Button>
