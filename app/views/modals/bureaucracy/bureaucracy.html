@@ -20,26 +20,26 @@
             </StackLayout>
             <StackLayout orientation="horizontal" class="pull-right">
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="coalUsed"></TextField>
-                <StackLayout>
+                <StackLayout width="75">
                     <Label class="" [text]="player.Coal + '/' + (coalUsed != null ? player.Coal - coalUsed : player.Coal)"></Label> 
-                    <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
+                    <Label class="coal fa" width="25" [text]="'fa-industry' | fonticon"></Label>
                 </StackLayout>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="oilUsed"></TextField>
-                <StackLayout>
+                <StackLayout width="75">
                     <Label class="" [text]="player.Oil + '/' + (oilUsed != null ? player.Oil - oilUsed : player.Oil)"></Label>
-                    <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
+                    <Label class="oil fa" width="25" [text]="'fa-car' | fonticon"></Label>
                 </StackLayout>
             </StackLayout>
             <StackLayout orientation="horizontal" class="pull-right">
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="garbageUsed"></TextField>
-                <StackLayout>
+                <StackLayout width="75">
                     <Label class="" [text]="player.Garbage + '/' + (garbageUsed != null ? player.Garbage - garbageUsed : player.Garbage)"></Label>  
-                    <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
+                    <Label class="garbage fa" width="25" [text]="'fa-trash' | fonticon"></Label>
                 </StackLayout>
                 <TextField class="bordered m-l-10" width="35" [(ngModel)]="uraniumUsed"></TextField>
-                <StackLayout>
+                <StackLayout width="75">
                     <Label class="" [text]="player.Uranium + '/' + (uraniumUsed != null ? player.Uranium - uraniumUsed : player.Uranium)"></Label> 
-                    <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
+                    <Label class="uranium fa" width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

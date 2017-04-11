@@ -28,3 +28,18 @@ refer to http://docs.nativescript.org/ui/theme.
 page {
   font-size: 18px;
 }
+.coal {
+    color: brown;
+}
+
+.oil {
+    color: darkgrey;
+}
+
+.garbage {
+    color: #f4b642;
+}
+
+.uranium {
+    color: red;
+}

@@ -10,19 +10,32 @@ import { Player } from "../../../models/player";
 
 export class BuyResourcesComponent {
     public player: Player;
-    public housesPowered: any;
-    public coalUsed: any;
-    public oilUsed: any;
-    public garbageUsed: any;
-    public uraniumUsed: any;
-    public payout: any;
+    public coalPurchased: any;
+    public oilPurchased: any;
+    public garbagePurchased: any;
+    public uraniumPurchased: any;
+    public coalCost: any;
+    public oilCost: any;
+    public garbageCost: any;
+    public uraniumCost: any;
 
     public constructor(private params: ModalDialogParams) {
         this.player = <Player>params.context;
     }
 
     public close(result: string) {
-        if (result == 'OK') {    
+        if (result == 'OK') {            
+            this.player.Money = this.player.Money - ((parseInt(this.coalCost) * parseInt(this.coalPurchased))
+                                                   + (parseInt(this.oilCost) * parseInt(this.oilPurchased)) 
+                                                   + (parseInt(this.garbageCost) * parseInt(this.garbagePurchased))
+                                                   + (parseInt(this.uraniumCost) * parseInt(this.uraniumPurchased)));            
+
+            //let intHouses = this.player.Houses + parseInt(this.houseQuantity); // weird angular binding issue            
+
+            this.player.Coal += this.coalPurchased;
+            this.player.Oil += this.oilPurchased;
+            this.player.Garbage += this.garbagePurchased;
+            this.player.Uranium += this.uraniumPurchased;            
         }
         
         this.params.closeCallback(this.player);
