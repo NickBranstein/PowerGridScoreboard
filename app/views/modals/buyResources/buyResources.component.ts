@@ -40,4 +40,8 @@ export class BuyResourcesComponent {
         
         this.params.closeCallback(this.player);
     }
+
+    public onChange(event: any) {
+        console.log(event);
+    }
 }

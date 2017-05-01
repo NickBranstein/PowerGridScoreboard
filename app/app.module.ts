@@ -14,6 +14,9 @@ import { BureaucracyComponent } from "./views/modals/bureaucracy/bureaucracy.com
 import { BuyResourcesComponent } from "./views/modals/buyResources/buyResources.component";
 import { BuyPowerComponent } from "./views/modals/buyPower/buyPower.component";
 
+// validators
+import { GreaterThanZeroValidatorDirective } from "./validators/greaterThanZeroValidator"
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -21,6 +24,7 @@ import { BuyPowerComponent } from "./views/modals/buyPower/buyPower.component";
         BureaucracyComponent,
         BuyResourcesComponent,
         BuyPowerComponent,
+        GreaterThanZeroValidatorDirective,
         ...navigatableComponents
     ],
     bootstrap: [

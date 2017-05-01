@@ -17,31 +17,31 @@
                 <Label class="" [text]=""></Label>  
             </StackLayout>
             <StackLayout orientation="horizontal" class="pull-right"> 
-                <Label text="Resources to buy:           "></Label>
-            </StackLayout>
+                <Label text="number to purchase / cost"></Label>
+            </StackLayout>            
             <StackLayout orientation="horizontal" class="pull-right">
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="coalPurchased" placeholder="count"></TextField>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="coalCost" placeholder="$"></TextField>
-                <StackLayout>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="coalPurchased" placeholder="count" #coal="ngModel"></TextField>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="coalCost" placeholder="$" #coalC="ngModel"></TextField>
+                <StackLayout>                        
                     <Label class="" [text]="player.Coal + '/' + (coalPurchased != null ? player.Coal + coalPurchased : player.Coal)"></Label> 
                     <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
                 </StackLayout>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="oilPurchased" placeholder="count"></TextField>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="oilCost" placeholder="$"></TextField>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="oilPurchased" placeholder="count" #oil="ngModel"></TextField>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="oilCost" placeholder="$" #oilC="ngModel"></TextField>
                 <StackLayout>
                     <Label class="" [text]="player.Oil + '/' + (oilPurchased != null ? player.Oil + oilPurchased : player.Oil)"></Label>
                     <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
                 </StackLayout>
             </StackLayout>
             <StackLayout orientation="horizontal" class="pull-right">
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="garbagePurchased" placeholder="count"></TextField>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="garbageCost" placeholder="$"></TextField>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="garbagePurchased" placeholder="count" #garbage="ngModel"></TextField>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="garbageCost" placeholder="$" #garbageC="ngModel"></TextField>
                 <StackLayout>
                     <Label class="" [text]="player.Garbage + '/' + (garbagePurchased != null ? player.Garbage + garbagePurchased : player.Garbage)"></Label>  
                     <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
                 </StackLayout>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="uraniumPurchased" placeholder="count"></TextField>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="uraniumCost" placeholder="$"></TextField>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="uraniumPurchased" placeholder="count" #uranium="ngModel"></TextField>
+                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="uraniumCost" placeholder="$" #uraniumC="ngModel"></TextField>
                 <StackLayout>
                     <Label class="" [text]="player.Uranium + '/' + (uraniumPurchased != null ? player.Uranium + uraniumPurchased : player.Uranium)"></Label> 
                     <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
@@ -52,7 +52,16 @@
             <StackLayout orientation="horizontal" class="header">
             </StackLayout>
             <StackLayout orientation="horizontal" class="header"> 
-                <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')"></Button>
+                <Button class="btn btn-primary btn-rounded-lg fa green" 
+                    width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')" 
+                     [class.disabled]="!coal.valid || !coalC.valid ||
+                        !oil.valid || !oilC.valid ||
+                        !garbage.valid || !garbageC.valid ||
+                        !uranium.valid || !uraniumC.valid" 
+                     [isEnabled]="coal.valid && coalC.valid &&
+                        oil.valid && oilC.valid &&
+                        garbage.valid && garbageC.valid &&
+                        uranium.valid && uraniumC.valid"></Button>
                 <Button class="btn btn-primary btn-rounded-lg fa red" width="50" [text]="'fa-times' | fonticon" (tap)="close('Cancel')"></Button>
             </StackLayout>
         </StackLayout>
