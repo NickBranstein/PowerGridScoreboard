@@ -20,7 +20,7 @@
                 <Label text="number to purchase / cost"></Label>
             </StackLayout>            
             <StackLayout orientation="horizontal" class="pull-right">
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="coalPurchased" placeholder="count" #coal="ngModel"></TextField>
+                <TextField [greaterThanZero]="coalCost" class="bordered m-l-10" width="35" [(ngModel)]="coalPurchased" placeholder="count" #coal="ngModel"></TextField>
                 <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="coalCost" placeholder="$" #coalC="ngModel"></TextField>
                 <StackLayout>                        
                     <Label class="" [text]="player.Coal + '/' + (coalPurchased != null ? player.Coal + coalPurchased : player.Coal)"></Label> 
