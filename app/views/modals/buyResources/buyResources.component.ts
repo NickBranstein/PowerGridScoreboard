@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, ElementRef } from "@angular/core";
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
 import { Player } from "../../../models/player";
 
@@ -18,6 +18,7 @@ export class BuyResourcesComponent {
     public oilCost: any;
     public garbageCost: any;
     public uraniumCost: any;
+    @ViewChild("coal") test: ElementRef;
 
     public constructor(private params: ModalDialogParams) {
         this.player = <Player>params.context;
