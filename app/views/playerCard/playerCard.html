@@ -20,9 +20,9 @@
         <Label class="resources p-l-5" width="60" [text]="player.Houses"></Label>
     </StackLayout>
     <GridLayout rows="auto" columns="*,*,*,*">
-        <Button class="btn power fa" [text]="'fa-bolt' | fonticon" row="0" col="0" (tap)="buyPower()"></Button>
-        <Button class="btn raw fa" [text]="'fa-coffee' | fonticon" row="0" col="1" (tap)="buyResources()"></Button>
-        <Button class="btn build fa" [text]="'fa-bank' | fonticon" row="0" col="2" (tap)="buildHouses()"></Button>
-        <Button class="btn bureaucracy fa" [text]="'fa-usd' | fonticon" row="0" col="3" (tap)="bureaucracy()"></Button>            
+        <Button class="btn power fa" [text]="'fa-bolt' | fonticon" row="0" col="0" width="40" (tap)="buyPower()"></Button>
+        <Button class="btn raw fa" [text]="'fa-coffee' | fonticon" row="0" col="1" width="40" (tap)="buyResources()"></Button>
+        <Button class="btn build fa" [text]="'fa-bank' | fonticon" row="0" col="2" width="40" (tap)="buildHouses()"></Button>
+        <Button class="btn bureaucracy fa" [text]="'fa-usd' | fonticon" row="0" col="3" width="40" (tap)="bureaucracy()"></Button>            
     </GridLayout>
 </StackLayout>
