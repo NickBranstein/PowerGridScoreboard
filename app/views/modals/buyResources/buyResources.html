@@ -20,28 +20,28 @@
                 <Label text="number to purchase / cost"></Label>
             </StackLayout>            
             <StackLayout orientation="horizontal" class="pull-right">
-                <TextField [greaterThanZero]="coalCost" class="bordered m-l-10" width="35" [(ngModel)]="coalPurchased" placeholder="count" #coal="ngModel"></TextField>
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="coalCost" placeholder="$" #coalC="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="coalPurchased" placeholder="count" #coal="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="coalCost" placeholder="$" #coalC="ngModel"></TextField>
                 <StackLayout>                        
                     <Label class="" [text]="player.Coal + '/' + (coalPurchased != null ? player.Coal + coalPurchased : player.Coal)"></Label> 
                     <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
                 </StackLayout>
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="oilPurchased" placeholder="count" #oil="ngModel"></TextField>
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="oilCost" placeholder="$" #oilC="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="oilPurchased" placeholder="count" #oil="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="oilCost" placeholder="$" #oilC="ngModel"></TextField>
                 <StackLayout>
                     <Label class="" [text]="player.Oil + '/' + (oilPurchased != null ? player.Oil + oilPurchased : player.Oil)"></Label>
                     <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
                 </StackLayout>
             </StackLayout>
             <StackLayout orientation="horizontal" class="pull-right">
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="garbagePurchased" placeholder="count" #garbage="ngModel"></TextField>
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="garbageCost" placeholder="$" #garbageC="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="garbagePurchased" placeholder="count" #garbage="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="garbageCost" placeholder="$" #garbageC="ngModel"></TextField>
                 <StackLayout>
                     <Label class="" [text]="player.Garbage + '/' + (garbagePurchased != null ? player.Garbage + garbagePurchased : player.Garbage)"></Label>  
                     <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
                 </StackLayout>
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="uraniumPurchased" placeholder="count" #uranium="ngModel"></TextField>
-                <TextField greaterThanZero class="bordered m-l-10" width="35" [(ngModel)]="uraniumCost" placeholder="$" #uraniumC="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="uraniumPurchased" placeholder="count" #uranium="ngModel"></TextField>
+                <TextField [greaterThan]="0" class="bordered m-l-10" width="35" [(ngModel)]="uraniumCost" placeholder="$" #uraniumC="ngModel"></TextField>
                 <StackLayout>
                     <Label class="" [text]="player.Uranium + '/' + (uraniumPurchased != null ? player.Uranium + uraniumPurchased : player.Uranium)"></Label> 
                     <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>

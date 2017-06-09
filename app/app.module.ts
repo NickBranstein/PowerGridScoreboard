@@ -15,7 +15,7 @@ import { BuyResourcesComponent } from "./views/modals/buyResources/buyResources.
 import { BuyPowerComponent } from "./views/modals/buyPower/buyPower.component";
 
 // validators
-import { GreaterThanZeroValidatorDirective } from "./validators/greaterThanZeroValidator"
+import { GreaterThanValidatorDirective } from "./validators/greaterThanValidator"
 
 @NgModule({
     declarations: [
@@ -24,7 +24,7 @@ import { GreaterThanZeroValidatorDirective } from "./validators/greaterThanZeroV
         BureaucracyComponent,
         BuyResourcesComponent,
         BuyPowerComponent,
-        GreaterThanZeroValidatorDirective,
+        GreaterThanValidatorDirective,
         ...navigatableComponents
     ],
     bootstrap: [
