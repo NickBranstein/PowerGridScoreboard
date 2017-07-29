@@ -11,7 +11,6 @@ export class LessThanOrEqualValidatorDirective implements Validator {
     validate(control: AbstractControl): { [key: string]: any } {
         let num = parseInt(control.value);
         let lessThanOrEqual = parseInt(this.lessThanOrEqual);
-        console.log('Less than or equal to: ' + lessThanOrEqual);
 
         return control.value === null
             || control.value === undefined
