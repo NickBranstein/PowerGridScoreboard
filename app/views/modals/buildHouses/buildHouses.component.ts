@@ -11,7 +11,7 @@ import { Player } from "../../../models/player";
 export class BuildHousesComponent {
     public player: Player;
     public housePrice: number;
-    public houseQuantity: any;
+    public houseQuantity: number;
 
     public constructor(private params: ModalDialogParams) {
         this.player = <Player>params.context;

@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
 import { Player } from "../../../models/player";
+import { Utilities } from "../../../utilities";
 
 @Component({
     selector: "buyResources",
@@ -10,28 +11,27 @@ import { Player } from "../../../models/player";
 
 export class BuyResourcesComponent {
     public player: Player;
-    public coalPurchased: any;
-    public oilPurchased: any;
-    public garbagePurchased: any;
-    public uraniumPurchased: any;
-    public coalCost: any;
-    public oilCost: any;
-    public garbageCost: any;
-    public uraniumCost: any;
-    @ViewChild("coal") test: ElementRef;
+    public coalPurchased: number;
+    public oilPurchased: number;
+    public garbagePurchased: number;
+    public uraniumPurchased: number;
+    public coalCost: number;
+    public oilCost: number;
+    public garbageCost: number;
+    public uraniumCost: number;
 
     public constructor(private params: ModalDialogParams) {
         this.player = <Player>params.context;
     }
 
     public close(result: string) {
-        if (result == 'OK') {            
-            this.player.Money = this.player.Money - ((parseInt(this.coalCost) * parseInt(this.coalPurchased))
-                                                   + (parseInt(this.oilCost) * parseInt(this.oilPurchased)) 
-                                                   + (parseInt(this.garbageCost) * parseInt(this.garbagePurchased))
-                                                   + (parseInt(this.uraniumCost) * parseInt(this.uraniumPurchased)));            
+        if (result == 'OK') {
+            this.parseValues();
 
-            //let intHouses = this.player.Houses + parseInt(this.houseQuantity); // weird angular binding issue            
+            this.player.Money = this.player.Money - (this.coalCost * this.coalPurchased)
+                + (this.oilCost * this.oilPurchased)
+                + (this.garbageCost * this.garbagePurchased)
+                + (this.uraniumCost * this.uraniumPurchased);            
 
             this.player.Coal += this.coalPurchased;
             this.player.Oil += this.oilPurchased;
@@ -42,7 +42,14 @@ export class BuyResourcesComponent {
         this.params.closeCallback(this.player);
     }
 
-    public onChange(event: any) {
-        console.log(event);
+    private parseValues(): void {
+            this.coalCost = Utilities.valueOrIfNullReturnZero(this.coalCost);
+            this.coalPurchased = Utilities.valueOrIfNullReturnZero((this.coalPurchased);
+            this.oilCost = Utilities.valueOrIfNullReturnZero(this.oilCost);
+            this.oilPurchased = Utilities.valueOrIfNullReturnZero(this.oilPurchased);
+            this.garbageCost = Utilities.valueOrIfNullReturnZero(this.garbageCost);
+            this.garbagePurchased = Utilities.valueOrIfNullReturnZero(this.garbagePurchased);
+            this.uraniumCost = Utilities.valueOrIfNullReturnZero(this.uraniumCost);
+            this.uraniumPurchased = Utilities.valueOrIfNullReturnZero(this.uraniumPurchased);
     }
 }

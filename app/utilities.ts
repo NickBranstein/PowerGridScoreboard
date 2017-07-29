@@ -1,5 +1,5 @@
 export class Utilities {
-    valueOrIfNullReturnZero(val : any) {
+    public static valueOrIfNullReturnZero(val : any) {
         return val === null || val === undefined ? 0: val;
     }
 }

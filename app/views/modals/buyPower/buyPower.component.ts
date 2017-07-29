@@ -10,12 +10,12 @@ import { Player } from "../../../models/player";
 
 export class BuyPowerComponent {
     public player: Player;
-    public housesPowered: any;
-    public coalUsed: any;
-    public oilUsed: any;
-    public garbageUsed: any;
-    public uraniumUsed: any;
-    public payout: any;
+    public housesPowered: number;
+    public coalUsed: number;
+    public oilUsed: number;
+    public garbageUsed: number;
+    public uraniumUsed: number;
+    public payout: number;
 
     public constructor(private params: ModalDialogParams) {
         this.player = <Player>params.context;
@@ -26,5 +26,8 @@ export class BuyPowerComponent {
         }
         
         this.params.closeCallback(this.player);
+    }
+    private parse(val: any): number {
+        return val === null || val == undefined ? 0 : val;
     }
 }
