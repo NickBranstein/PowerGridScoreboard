@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
 import { Player } from "../../../models/player";
+import { Utilities } from "../../../utilities";
 
 @Component({
     selector: "buyPower",
@@ -10,12 +11,7 @@ import { Player } from "../../../models/player";
 
 export class BuyPowerComponent {
     public player: Player;
-    public housesPowered: number;
-    public coalUsed: number;
-    public oilUsed: number;
-    public garbageUsed: number;
-    public uraniumUsed: number;
-    public payout: number;
+    public price: number;
 
     public constructor(private params: ModalDialogParams) {
         this.player = <Player>params.context;
@@ -23,11 +19,10 @@ export class BuyPowerComponent {
 
     public close(result: string) {
         if (result == 'OK') {           
+            this.price = Utilities.valueOrIfNullReturnZero(this.price);
+            this.player.Money -= this.price;
         }
         
         this.params.closeCallback(this.player);
-    }
-    private parse(val: any): number {
-        return val === null || val == undefined ? 0 : val;
     }
 }

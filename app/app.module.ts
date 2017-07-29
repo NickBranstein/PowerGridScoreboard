@@ -15,8 +15,9 @@ import { BuyResourcesComponent } from "./views/modals/buyResources/buyResources.
 import { BuyPowerComponent } from "./views/modals/buyPower/buyPower.component";
 
 // validators
-import { GreaterThanValidatorDirective } from "./validators/greaterThanValidator"
-import { RequiredIfValidatorDirective } from "./validators/requiredIfValidator"
+import { GreaterThanValidatorDirective } from "./validators/greaterThanValidator";
+import { LessThanOrEqualValidatorDirective } from "./validators/lessThanOrEqualValidator";
+import { RequiredIfValidatorDirective } from "./validators/requiredIfValidator";
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { RequiredIfValidatorDirective } from "./validators/requiredIfValidator"
         BuyResourcesComponent,
         BuyPowerComponent,
         GreaterThanValidatorDirective,
+        LessThanOrEqualValidatorDirective,
         RequiredIfValidatorDirective,
         ...navigatableComponents
     ],
