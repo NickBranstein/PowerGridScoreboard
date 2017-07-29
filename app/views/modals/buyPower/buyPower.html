@@ -1,58 +1,25 @@
 <StackLayout>
-     <GridLayout columns="auto, auto, *" rows="auto">
+    <GridLayout columns="*, *, *" rows="auto">
         <StackLayout row="0" col="0" class="p-l-5" orientation="horizontal">
-            <Label class='fa' [text]="'fa-user' | fonticon"></Label>
             <Label class="name p-r-5" [text]="player.Name"></Label>
+            <Label class='fa' [text]="'fa-user' | fonticon"></Label>
         </StackLayout>
         <StackLayout row="0" col="1" class="m-x-auto" orientation="horizontal">
-            <Label text=" -  Buy Power Plants"></Label>
-        </StackLayout>
-    </GridLayout>    
-    <GridLayout columns="auto, auto, *" rows="auto" class="">
-        <StackLayout orientation="vertical" row="0" col="0" class="p-l-5">           
-            <StackLayout orientation="horizontal" class="header">   
-                <Label class='home fa' width="25" [text]="'fa-home' | fonticon"></Label>
-                <Label class='' text="Houses powered:  "></Label>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="housesPowered"></TextField>
-            </StackLayout>
-            <StackLayout orientation="horizontal" class="pull-right"> 
-                <Label text="Resources used:           "></Label>
-            </StackLayout>
-            <StackLayout orientation="horizontal" class="pull-right">
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="coalUsed"></TextField>
-                <StackLayout>
-                    <Label class="" [text]="player.Coal + '/' + (coalUsed != null ? player.Coal - coalUsed : player.Coal)"></Label> 
-                    <Label class='coal fa' width="25" [text]="'fa-industry' | fonticon"></Label>
-                </StackLayout>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="oilUsed"></TextField>
-                <StackLayout>
-                    <Label class="" [text]="player.Oil + '/' + (oilUsed != null ? player.Oil - oilUsed : player.Oil)"></Label>
-                    <Label class='oil fa' width="25" [text]="'fa-car' | fonticon"></Label>
-                </StackLayout>
-            </StackLayout>
-            <StackLayout orientation="horizontal" class="pull-right">
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="garbageUsed"></TextField>
-                <StackLayout>
-                    <Label class="" [text]="player.Garbage + '/' + (garbageUsed != null ? player.Garbage - garbageUsed : player.Garbage)"></Label>  
-                    <Label class='garbage fa' width="25" [text]="'fa-trash' | fonticon"></Label>
-                </StackLayout>
-                <TextField class="bordered m-l-10" width="35" [(ngModel)]="uraniumUsed"></TextField>
-                <StackLayout>
-                    <Label class="" [text]="player.Uranium + '/' + (uraniumUsed != null ? player.Uranium - uraniumUsed : player.Uranium)"></Label> 
-                    <Label class='uranium fa' width="25" [text]="'fa-exclamation-triangle' | fonticon"></Label>
-                </StackLayout>
-            </StackLayout>
-        </StackLayout>
-        <StackLayout class="pull-left" orientation="vertical" row="0" col="1" >
-            <StackLayout orientation="horizontal" class="header">   
-                <Label class="" [text]="'Electro:  ' + player.Money"></Label>
-                <Label class="" [text]=""></Label>
-                <Label class="" [text]=""></Label>  
-            </StackLayout>
-            <StackLayout orientation="horizontal" class="header"> 
-                <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')"></Button>
-                <Button class="btn btn-primary btn-rounded-lg fa red" width="50" [text]="'fa-times' | fonticon" (tap)="close('Cancel')"></Button>
-            </StackLayout>
+            <Label text="Buy Power Plant"></Label>
         </StackLayout>
     </GridLayout>
+    <StackLayout class="m-x-auto" orientation="vertical">
+        <Label [text]="'Total Electro ' + player.Money"></Label>
+        <StackLayout orientation="horizontal">
+            <Label class="divider" text="Power Plant Cost"></Label>
+            <TextField [greaterThan]="0" [lessThanOrEqual]="player.Money" required class="bordered m-l-10" width="35" [(ngModel)]="price" #plantPrice="ngModel"></TextField>
+        </StackLayout>
+        <Label [text]="'Electro Balance ' + (price != null ? player.Money - price : player.Money)"></Label>
+        <StackLayout orientation="horizontal">
+            <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')" 
+                [isEnabled]="plantPrice.valid"
+                [class.disabled]="!plantPrice.valid"></Button>
+            <Button class="btn btn-primary btn-rounded-lg fa red" width="50" [text]="'fa-times' | fonticon" (tap)="close('Cancel')"></Button>
+        </StackLayout>
+    </StackLayout>
 </StackLayout>
