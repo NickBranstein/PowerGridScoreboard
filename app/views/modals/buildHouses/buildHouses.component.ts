@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
 import { Player } from "../../../models/player";
+import { Utilities } from "../../../utilities";
 
 @Component({
     selector: "buildHouses",
@@ -18,14 +19,14 @@ export class BuildHousesComponent {
     }
 
     public totalHouses(): string {
-        let intHouses = this.player.Houses + parseInt(this.houseQuantity); // weird angular binding issue
+        let intHouses = this.player.Houses + Utilities.valueOrIfNullReturnZero(this.houseQuantity); // weird angular binding issue
 
         return 'Total Houses ' + (this.houseQuantity != null ? intHouses : this.player.Houses);
     }
 
     public close(result: string) {
         if (result == 'OK') {
-            let intHouses = this.player.Houses + parseInt(this.houseQuantity); // weird angular binding issue
+            let intHouses = this.player.Houses + Utilities.valueOrIfNullReturnZero(this.houseQuantity); // weird angular binding issue
 
             this.player.Money -= this.housePrice;
             this.player.Houses += intHouses;

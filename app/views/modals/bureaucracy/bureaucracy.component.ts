@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
 import { Player } from "../../../models/player";
+import { Utilities } from "../../../utilities";
 
 @Component({
     selector: "bureaucracy",

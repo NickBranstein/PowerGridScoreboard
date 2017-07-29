@@ -44,7 +44,7 @@ export class BuyResourcesComponent {
 
     private parseValues(): void {
             this.coalCost = Utilities.valueOrIfNullReturnZero(this.coalCost);
-            this.coalPurchased = Utilities.valueOrIfNullReturnZero((this.coalPurchased);
+            this.coalPurchased = Utilities.valueOrIfNullReturnZero(this.coalPurchased);
             this.oilCost = Utilities.valueOrIfNullReturnZero(this.oilCost);
             this.oilPurchased = Utilities.valueOrIfNullReturnZero(this.oilPurchased);
             this.garbageCost = Utilities.valueOrIfNullReturnZero(this.garbageCost);
