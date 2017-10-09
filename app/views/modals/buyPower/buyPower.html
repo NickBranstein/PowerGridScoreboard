@@ -9,16 +9,18 @@
         </StackLayout>
     </GridLayout>
     <StackLayout class="m-x-auto" orientation="vertical">
-        <Label [text]="'Total Electro ' + player.Money"></Label>
+        <StackLayout orientation="horizontal">
+            <Label class="m-l-10" text=""></Label>
+            <Label [text]="'Total Electro'" class="m-l-10"></Label>
+            <Label [text]="player.Money" class="m-l-10"></Label>
+        </StackLayout>
         <StackLayout orientation="horizontal">
             <Label class="divider" text="Power Plant Cost"></Label>
             <TextField [greaterThan]="0" [lessThanOrEqual]="player.Money" required class="bordered m-l-10" width="35" [(ngModel)]="price" #plantPrice="ngModel"></TextField>
         </StackLayout>
         <Label [text]="'Electro Balance ' + (price != null ? player.Money - price : player.Money)"></Label>
         <StackLayout orientation="horizontal">
-            <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')" 
-                [isEnabled]="plantPrice.valid"
-                [class.disabled]="!plantPrice.valid"></Button>
+            <Button class="btn btn-primary btn-rounded-lg fa green" width="50" [text]="'fa-check' | fonticon" (tap)="close('OK')" [isEnabled]="plantPrice.valid" [class.disabled]="!plantPrice.valid"></Button>
             <Button class="btn btn-primary btn-rounded-lg fa red" width="50" [text]="'fa-times' | fonticon" (tap)="close('Cancel')"></Button>
         </StackLayout>
     </StackLayout>
