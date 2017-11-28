@@ -26,10 +26,10 @@ export class BureaucracyComponent {
     public close(result: string) {
         if (result == 'OK') {
             this.player.Money += this.getPayout(this.housesPowered);
-            this.player.Coal -= this.coalUsed;
-            this.player.Oil -= this.oilUsed;
-            this.player.Garbage -= this.garbageUsed;
-            this.player.Uranium -= this.uraniumUsed;            
+            this.player.Coal -= Utilities.valueOrIfNullReturnZero(this.coalUsed);
+            this.player.Oil -= Utilities.valueOrIfNullReturnZero(this.oilUsed);
+            this.player.Garbage -= Utilities.valueOrIfNullReturnZero(this.garbageUsed);
+            this.player.Uranium -= Utilities.valueOrIfNullReturnZero(this.uraniumUsed);            
         }
         
         this.params.closeCallback(this.player);
